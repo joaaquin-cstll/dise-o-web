@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrupación Musical Virgen de los Reyes - Sevilla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===================== CABECERA / NAV ===================== -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="img-logo"></div>
+            </div>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#biography">Biography</a></li>
+                <li><a href="#albums">Albums</a></li>
+                <li><a href="#tour">On Tour</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- MENÚ MÓVIL (solo CSS, sin JS): mismo truco del carrusel pero con :target.
+                 - "#menu" es el estado abierto: #menu:target muestra la lista.
+                 - Al pulsar cualquier enlace del menú la URL pasa a "#biography", "#albums"...
+                   y #menu deja de ser :target, así que el menú se cierra solo.
+                 - "#cerrar" no existe en la página: cambia el :target sin hacer scroll.
+                 Van DESPUÉS del <ul> porque el selector "~" solo mira a los hermanos que vienen después.
+                 En escritorio los tres están ocultos. -->
+            <a class="burger burger-open" href="#menu" aria-label="Open menu" aria-controls="menu"></a>
+            <a class="burger burger-close" href="#cerrar" aria-label="Close menu"></a>
+            <a class="menu-backdrop" href="#cerrar" aria-hidden="true" tabindex="-1"></a>
+        </nav>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-legend">
+                <h1><span class="line-1">Virgen</span> <span class="line-2">de los</span> <span class="line-3">Reyes</span></h1>
+                <div class="hero-buttons">
+                    <a class="btn btn-fill" href="#tour">Upcoming Tour</a>
+                    <a class="btn btn-line" href="#albums">Listen Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== BIOGRAPHY ===================== -->
+    <section class="bio" id="biography">
+        <div class="bio-container">
+
+            <div class="bio-left">
+                <img src="img/vr1.png" alt="Virgen de los Reyes band playing in front of a crowd">
+                <div class="bio-left-text">
+                    <p>Over more than four decades, the band has been honored as an Honorary Brother (Hermano Honorífico) by brotherhoods such as San Esteban, La Resurrección, and Los Dolores de Torreblanca, while also expanding its festive presence in the city with its traditional Christmas repertoire alongside the Heraldo Real.</p>
+                    <p>Following the leadership transition to Antonio Velasco in 2020 upon Ramírez's retirement, the ensemble has taken on new projects, including forming a brass quintet for Las Siete Palabras, performing in the 2023 Santo Entierro Grande, and joining brotherhoods like El Divino Perdón. Throughout its history, the band has recorded a total of 16 albums (13 of processional marches and 3 featuring Christmas and children's music).</p>
+                </div>
+            </div>
+
+            <div class="bio-right">
+                <h2>Biography</h2>
+                <p>Founded on May 30, 1980, within the Hermandad de Jesús Despojado and driven by the leadership of Juan Antonio Ramírez Téllez, the band—known independently since 1992 as Agrupación Musical Nuestra Señora de los Reyes—quickly established itself in Seville's Holy Week, accompanying brotherhoods such as La Sed, La Resurrección, Los Gitanos, and San Esteban. Its history was defined in 1988 by the premiere of the arrangement of "La Saeta", which became a milestone in cofrade tradition alongside the Señor de la Salud.</p>
+                <div class="bio-timeline"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== ALBUMS ===================== -->
+    <section class="albums" id="albums">
+        <div class="albums-container">
+            <h2>Albums</h2>
+
+            <!-- Álbum destacado -->
+            <div class="featured">
+                <img class="featured-cover" src="img/vr_disc_principal.png" alt="Cover of the album Luz de Vida">
+
+                <div class="featured-info">
+                    <h3>Luz de Vida</h3>
+                    <ol>
+                        <li>Vida y Alegría</li>
+                        <li>Stabat Mater</li>
+                        <li>Lacrimosa</li>
+                        <li>Adagio</li>
+                        <li>Recuérdame Contigo</li>
+                    </ol>
+                </div>
+
+                <div class="featured-card">
+                    <img src="img/vr_disc_principal.png" alt="Cover of the album Luz de Vida">
+                    <a class="btn-play" href="https://open.spotify.com/album/506moZB9aVT3aBazl9UStB?si=YjvnJSSCTHO5d5VuOogxAw" target="_blank" rel="noopener">Play album</a>
+                    <!-- Sustituir "artist/6TnGRTtdmYc90AOGJYsYke" por "album/ID_DEL_ALBUM" de Luz de Vida -->
+                    <iframe src="https://open.spotify.com/embed//album/506moZB9aVT3aBazl9UStB?si=YjvnJSSCTHO5d5VuOogxAw" title="Luz de Vida on Spotify" 
+                    height="80" allow="encrypted-media; clipboard-write; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- Resto de álbumes -->
+            <div class="albums-list">
+                    <div class="album">
+                        <h3>Sevilla</h3>
+                        <div class="album-main">
+                            <img src="img/disco2.jpg" alt="Cover of the album Sevilla">
+                            <ol>
+                                <li>Sevilla</li>
+                                <li>¡Venga de Frente!</li>
+                                <li>Azucena de Sevilla</li>
+                                <li>Eres de Todos</li>
+                            </ol>
+                        </div>
+                        <a class="btn-play" href="https://open.spotify.com/album/4IewCid2TahRjJoJ4v47z6" target="_blank" rel="noopener">Play album</a>
+                        <iframe src="https://open.spotify.com/embed/album/4IewCid2TahRjJoJ4v47z6" title="Sevilla on Spotify" 
+                        height="80" allow="encrypted-media; clipboard-write; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="album">
+                        <h3>Y al tercer día</h3>
+                        <div class="album-main">
+                            <img src="img/disco1.jpg" alt="Cover of the album Y al tercer día">
+                            <ol>
+                                <li>Serva la Bari</li>
+                                <li>¡A la Gloria!</li>
+                                <li>Judería Sevillana</li>
+                                <li>Y al Tercer Día ...</li>
+                            </ol>
+                        </div>
+                        <a class="btn-play" href="https://open.spotify.com/album/1c4X6RCl9ChVO099T0CEVv?si=zS8AsiI4Sli07tBAuPP9bw" target="_blank" rel="noopener">Play album</a>
+                        <iframe src="https://open.spotify.com/embed/album/1c4X6RCl9ChVO099T0CEVv?si=zS8AsiI4Sli07tBAuPP9bw" title="Y al tercer día on Spotify" 
+                        height="80" allow="encrypted-media; clipboard-write; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="album">
+                        <h3>Armónico</h3>
+                        <div class="album-main">
+                            <img src="img/disco3.jpg" alt="Cover of the album Armónico">
+                            <ol>
+                                <li>En Vos Confío</li>
+                                <li>Padre Nuestro</li>
+                                <li>Músicos de Dios</li>
+                                <li>Volver</li>
+                            </ol>
+                        </div>
+                        <a class="btn-play" href="https://open.spotify.com/album/5qab0ge9Z4LlkABdTChDWI" target="_blank" rel="noopener">Play album</a>
+                        <iframe src="https://open.spotify.com/embed/album/5qab0ge9Z4LlkABdTChDWI" title="Armónico on Spotify" 
+                        height="80" allow="encrypted-media; clipboard-write; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== VIDEOS (carrusel CSS) ===================== -->
+    <section class="videos" id="videos">
+        <div class="videos-container">
+
+            <div class="carousel">
+
+                <!-- 1) ESTADOS: tres radios con el MISMO name (solo uno marcado a la vez).
+                     Van ANTES de .viewport, las flechas y los puntos porque el selector "~"
+                     solo mira a los hermanos que vienen DESPUÉS.
+                     s1 = vídeo 1 | s2 = vídeo 2 | s3 = vídeo 3 -->
+                <input type="radio" name="slide" id="s1" checked>
+                <input type="radio" name="slide" id="s2">
+                <input type="radio" name="slide" id="s3">
+
+                <!-- 2) VENTANA: recorta la cinta para que solo se vea 1 vídeo -->
+                <div class="viewport">
+
+                    <!-- CINTA: los 3 vídeos uno al lado del otro.
+                         Sustituir VIDEO_ID_1, VIDEO_ID_2 y VIDEO_ID_3 por los identificadores de YouTube -->
+                    <div class="slider">
+
+                        <div class="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/9zjR9Bo5TxQ?si=kfWinAp6DbT8Vz2E" title="La Esperanza de Maria" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/-sT1TJe1r4U?si=bxeuzbLutaKsSxmo" title="El Galileo" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZYTROkwBCwU?si=js0UGmg6lzt29fRL" title="Vida y Alegria" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FLECHAS: cada una es un <label for="..."> que marca el destino.
+                     p2 estando en s2, vuelve a s1 / p3: estando en s3, vuelve a s2
+                     n1 estando en s1, avanza a s2 / n2: estando en s2, avanza a s3 -->
+                <label class="arrow prev p2" for="s1">&#10094;</label>
+                <label class="arrow prev p3" for="s2">&#10094;</label>
+                <label class="arrow next n1" for="s2">&#10095;</label>
+                <label class="arrow next n2" for="s3">&#10095;</label>
+
+                <!-- 4) NAV DEL PIE: un punto por vídeo -->
+                <div class="dots">
+                    <label for="s1" aria-label="Vídeo 1"></label>
+                    <label for="s2" aria-label="Vídeo 2"></label>
+                    <label for="s3" aria-label="Vídeo 3"></label>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ON TOUR ===================== -->
+    <section class="tour" id="tour">
+        <div class="tour-container">
+            <h2>On Tour</h2>
+            <div class="tour-body">
+                <div class="tour-list">
+                    <div class="event">
+                        <div class="event-date"><span>Oct</span><strong>31</strong></div>
+                        <div class="event-info">
+                            <h3>Autumn Extraordinary Concert - Triana Theater</h3>
+                            <p>C. Condes de Bustillo, 17, 41010 Sevilla</p>
+                            <div class="event-buttons">
+                                <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Teatro%20Triana%2C%20C.%20Condes%20de%20Bustillo%2C%2017%2C%2041010%20Sevilla" target="_blank" rel="noopener">View map</a>
+                                <a class="btn-small" href="#">Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date"><span>Nov</span><strong>1</strong></div>
+                        <div class="event-info">
+                            <h3>All Saints' Day Concert - Central Theater</h3>
+                            <p>C. José de Gálvez, 6, 41092 Sevilla</p>
+                            <div class="event-buttons">
+                                <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Teatro%20Central%2C%20C.%20Jos%C3%A9%20de%20G%C3%A1lvez%2C%206%2C%2041092%20Sevilla" target="_blank" rel="noopener">View map</a>
+                                <a class="btn-small" href="#">Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date"><span>Nov</span><strong>15</strong></div>
+                        <div class="event-info">
+                            <h3>Saint Cecilia Contest - Bullring - Atarfe</h3>
+                            <p>18230 Atarfe, Granada</p>
+                            <div class="event-buttons">
+                                <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Plaza%20de%20Toros%2C%2018230%20Atarfe%2C%20Granada" target="_blank" rel="noopener">View map</a>
+                                <a class="btn-small" href="#">Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date"><span>Dic</span><strong>7</strong></div>
+                        <div class="event-info">
+                            <h3>"Christmas is Coming" Street Parade - Sierpes</h3>
+                            <p>C. Sierpes, Casco Antiguo, 41004 Sevilla</p>
+                            <div class="event-buttons">
+                                <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=C.%20Sierpes%2C%20Casco%20Antiguo%2C%2041004%20Sevilla" target="_blank" rel="noopener">View map</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-list">
+                    <div class="event">
+                        <div class="event-date"><span>Jan</span><strong>18</strong></div>
+                        <div class="event-info">
+                            <h3>New Year's Extraordinary Concert - Granada</h3>
+                            <p>C. Acera del Casino, s/n, Centro, 18009 Granada</p>
+                            <div class="event-buttons">
+                                <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=C.%20Acera%20del%20Casino%2C%20s/n%2C%20Centro%2C%2018009%20Granada" target="_blank" rel="noopener">View map</a>
+                                <a class="btn-small" href="#">Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date"><span>Jan</span><strong>24</strong></div>
+                        <div class="event-info">
+                            <h3>Winter Chamber Concert - Maestro Padilla</h3>
+                            <p>Pl. Alfredo Kraus, 04007 Almería</p>
+                            <div class="event-buttons">
+                                <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Teatro%20Maestro%20Padilla%2C%20Pl.%20Alfredo%20Kraus%2C%2004007%20Almer%C3%ADa" target="_blank" rel="noopener">View map</a>
+                                <a class="btn-small" href="#">Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date"><span>Feb</span><strong>8</strong></div>
+                        <div class="event-info">
+                            <h3>Carnival Band Contest - Bullring of Ronda</h3>
+                            <p>C. Virgen de la Paz, 15, 29400 Ronda, Málaga</p>
+                            <div class="event-buttons">
+                                <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Plaza%20de%20Toros%20de%20Ronda%2C%20C.%20Virgen%20de%20la%20Paz%2C%2015%2C%2029400%20Ronda%2C%20M%C3%A1laga" target="_blank" rel="noopener">View map</a>
+                                <a class="btn-small" href="#">Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date"><span>Feb</span><strong>17</strong></div>
+                        <div class="event-info">
+                            <h3>Andalusia Day Street Parade - Darymelia Theater</h3>
+                            <p>C. Colón, s/n, 23001 Jaén</p>
+                            <div class="event-buttons">
+                                <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Teatro%20Darymelia%2C%20C.%20Col%C3%B3n%2C%20s/n%2C%2023001%20Ja%C3%A9n" target="_blank" rel="noopener">View map</a>
+                                <a class="btn-small" href="#">Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== STORE ===================== -->
+    <section class="store" id="store">
+        <div class="store-container">
+            <h2>Store</h2>
+            <div class="store-body">
+
+                <div class="store-group">
+                    <div class="product">
+                        <div class="product-pic"><img src="img/ropa1.png" alt="Black polo shirt"></div>
+                        <div class="product-footer"><span>Black Polo - 25,99€</span><img src="img/pic_carrito.png" alt="Add to cart"></div>
+                    </div>
+                    <div class="product">
+                        <div class="product-pic"><img src="img/ropa2.png" alt="Blue sweatshirt"></div>
+                        <div class="product-footer"><span>Blue Sweatshirt - 25,99€</span><img src="img/pic_carrito.png" alt="Add to cart"></div>
+                    </div>
+                    <div class="product">
+                        <div class="product-pic"><img src="img/ropa3.png" alt="Grey polo shirt"></div>
+                        <div class="product-footer"><span>Grey Polo - 25,99€</span><img src="img/pic_carrito.png" alt="Add to cart"></div>
+                    </div>
+                    <div class="product">
+                        <div class="product-pic"><img src="img/ropa4.png" alt="Socks"></div>
+                        <div class="product-footer"><span>Socks - 9,99€</span><img src="img/pic_carrito.png" alt="Add to cart"></div>
+                    </div>
+                </div>
+
+                <div class="store-divider"></div>
+
+                <div class="store-group">
+                    <div class="product">
+                        <div class="product-pic"><img src="img/pulsera1.png" alt="Orange wristband"></div>
+                        <div class="product-footer"><span>Orange Bracelet - 1,50€</span><img src="img/pic_carrito.png" alt="Add to cart"></div>
+                    </div>
+                    <div class="product">
+                        <div class="product-pic"><img src="img/pulsera3.png" alt="Blue wristband"></div>
+                        <div class="product-footer"><span>Blue Bracelet - 1,50€</span><img src="img/pic_carrito.png" alt="Add to cart"></div>
+                    </div>
+                    <div class="product">
+                        <div class="product-pic"><img src="img/pulsera2.png" alt="Green wristband"></div>
+                        <div class="product-footer"><span>Green Bracelet - 1,50€</span><img src="img/pic_carrito.png" alt="Add to cart"></div>
+                    </div>
+                    <div class="product">
+                        <div class="product-pic"><img src="img/llavero.png" alt="Musician keyring"></div>
+                        <div class="product-footer"><span>Keychain - 1,50€</span><img src="img/pic_carrito.png" alt="Add to cart"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Contact</h2>
+            <div class="contact-body">
+                <form action="">
+                    <input type="text" name="name" placeholder="Name" autocomplete="name">
+                    <input type="email" name="email" placeholder="Email" autocomplete="email">
+                    <textarea name="message" placeholder="Message"></textarea>
+                    <button class="submit" type="submit">Submit</button>
+                </form>
+
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:direccionvirgendelosreyes@gmail.com">direccionvirgendelosreyes@gmail.com</a></p>
+                    <p><strong>Phone:</strong> 676 239 211 422</p>
+                    <p><strong>Location:</strong> Pol. Ind. San Jerónimo, Calle Tamarguillo nº 3, 41015 Sevilla</p>
+                    <p><strong>Social media platforms for video and audio content playback:</strong></p>
+                    <div class="social">
+                        <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
+                        <a href="https://open.spotify.com/artist/6TnGRTtdmYc90AOGJYsYke" target="_blank" rel="noopener"><img src="img/spotify.png" alt="Spotify"></a>
+                    </div>
+                </div>
+
+                <ul class="contact-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#biography">Biography</a></li>
+                    <li><a href="#albums">Albums</a></li>
+                    <li><a href="#tour">On Tour</a></li>
+                    <li><a href="#store">Store</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo"></div>
+            <p>©2026 Agrupación Musical Virgen de los Reyes. All rights reserved. | Privacity Policy | Term of Service</p>
+            <div class="social">
+                <a href="#"><img src="img/tik_tok.png" alt="TikTok"></a>
+                <a href="#"><img src="img/x.png" alt="X"></a>
+                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

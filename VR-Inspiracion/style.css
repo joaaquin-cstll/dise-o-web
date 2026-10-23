@@ -1,0 +1,1543 @@
+/*- Google Fonts -*/
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------- Colores de la web ---------------------
+   Granate:  #4a0d17
+   Oscuro:   #15171c
+   Dorado:   #d9993a
+   Claro:    #f3e9dc
+-----------------------------------------------------------*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, html {
+    width: 100%;
+    font-weight: 700;
+    font-family: Hahmlet, serif;
+    background-color: #15171c;
+    color: #f3e9dc;
+}
+
+h1, h2, h3 {
+    font-family: Hahmlet, serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #d9993a;
+    letter-spacing: 2px;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*----------------------------------------- nav -------------------------------------*/
+
+header {
+    width: 100%;
+    height: 10vh;
+    min-height: 70px;
+    background-color: #4a0d17;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    flex: 1;
+    height: 100%;
+    padding: .8rem 0;
+}
+
+.img-logo {
+    width: 100%;
+    max-width: 330px;
+    height: 100%;
+
+    background-image: url(img/Logo_Nombre.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+#menu {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu li a {
+    font-family: Hahmlet, serif;
+    font-weight: 700;
+    color: #d9993a;
+    text-transform: uppercase;
+    font-size: .95rem;
+}
+
+#menu li a:hover {
+    color: #f3e9dc;
+}
+
+/* Menú móvil: en escritorio no existe. Se activa en los MediaQueries del final */
+.burger,
+.menu-backdrop {
+    display: none;
+}
+
+/*----------------------------------------- botones -------------------------------------*/
+
+.btn {
+    display: inline-block;
+    padding: .8rem 1.6rem;
+    font-family: Hahmlet, serif;
+    font-weight: 700;
+    font-size: .9rem;
+    text-transform: uppercase;
+    border: 2px solid #d9993a;
+    border-radius: 4px;
+}
+
+.btn-fill {
+    background-color: #d9993a;
+    color: #4a0d17;
+}
+
+.btn-fill:hover {
+    background-color: transparent;
+    color: #d9993a;
+}
+
+.btn-line {
+    background-color: rgba(74, 13, 23, .6);
+    color: #d9993a;
+    border-color: #8a3a40;
+}
+
+.btn-line:hover {
+    background-color: #d9993a;
+    color: #4a0d17;
+}
+
+/*----------------------------------------- HERO -------------------------------------*/
+
+.hero {
+    width: 100%;
+    height: 90vh;
+
+    background-image: url(img/vrbackground.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.hero-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 8%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero-legend {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-legend h1 {
+    text-align: center;
+    color: #d9993a;
+    line-height: 1.1;
+}
+
+.hero-legend h1 span {
+    display: block;
+}
+
+.line-1, .line-3 {
+    font-size: 4.2rem;
+}
+
+.line-2 {
+    font-size: 2.2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/*----------------------------------------- BIOGRAPHY -------------------------------------*/
+
+.bio {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #4a0d17;
+}
+
+.bio-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 5%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio-left {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3rem;
+}
+
+.bio-left img {
+    width: 100%;
+    display: block;
+}
+
+.bio-left-text {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+}
+
+.bio-right {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.bio-right h2 {
+    font-size: 2.6rem;
+}
+
+.bio-left-text p, .bio-right p {
+    font-size: 1rem;
+    line-height: 1.9;
+    font-weight: 700;
+}
+
+.bio-timeline {
+    width: 100%;
+    height: 55vh;
+    min-height: 380px;
+
+    background-image: url(img/lineaTemporal.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*----------------------------------------- ALBUMS -------------------------------------*/
+
+.albums {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #15171c;
+}
+
+.albums-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 5%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* ---- Álbum Principal ---- */
+.featured {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.featured-cover {
+    flex: 0 0 28%;
+    width: 28%;
+    display: block;
+}
+
+.featured-info {
+    flex: 1;
+    align-self: flex-start;
+    padding-top: 1.5rem;
+}
+
+.featured-info h3 {
+    font-size: 2.6rem;
+    color: #f3e9dc;
+    margin-bottom: 1.5rem;
+}
+
+.featured-info ol {
+    list-style-type: decimal;
+    padding-left: 2.2rem;
+    font-size: 1.3rem;
+    line-height: 2.2;
+}
+
+.featured-card {
+    flex: 0 0 24%;
+    padding: 1.2rem;
+    background-color: #4a0d17;
+    border-radius: 12px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.featured-card img {
+    width: 75%;
+    display: block;
+}
+
+.featured-card iframe {
+    width: 100%;
+    height: 80px;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* ---- Albums Secundarios ---- */
+.albums-list {
+    width: 100%;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.album {
+    flex: 1;
+    padding: 1.2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.album h3 {
+    font-size: 1.15rem;
+    color: #f3e9dc;
+}
+
+.album-main {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.album-main img {
+    flex: 0 0 90px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.album-main ol {
+    list-style-type: decimal;
+    padding-left: 1.2rem;
+    font-size: .8rem;
+    line-height: 2;
+}
+
+.btn-play {
+    padding: .5rem 1.6rem;
+    background-color: #d9993a;
+    color: #4a0d17;
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid #f3e9dc;
+    border-radius: 3px;
+}
+
+.btn-play:hover {
+    background-color: #f3e9dc;
+}
+
+.album iframe {
+    width: 70%;
+    height: 80px;
+    border: 0;
+    border-radius: 12px;
+}
+
+/*----------------------------------------- VIDEOS (carrusel) -------------------------------------*/
+
+.videos {
+    width: 100%;
+    background-color: #4a0d17;
+}
+
+.videos-container {
+    width: 100%;
+    padding: 3.5rem 5%;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* Medida de cada vídeo: se usa en la ventana, en la cinta y en la posición de las flechas */
+.carousel {
+    --w: min(760px, 62vw);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    gap: 1.5rem;
+    padding: 0 8rem;
+
+    .arrow {
+        color: #d9993a;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        font-size: 4.5rem;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 9999;
+        user-select: none;
+        transition: transform .3s;
+
+        /* habilitar/deshabilitar flecha*/
+        display: none;
+
+        &:hover {
+            transform: translateY(-50%) scale(1.15);
+        }
+    }
+
+    .prev {
+        left: 1rem;
+    }
+
+    .next {
+        right: 1rem;
+    }
+
+    .dots {
+        display: flex;
+        gap: 14px;
+
+        label {
+            width: 18px;
+            height: 18px;
+            background-color: #f3e9dc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background .3s, transform .3s;
+        }
+    }
+}
+
+/* Los radio button se ocultan: solo los usamos para interactuar con sus labels */
+.carousel input {
+    display: none;
+}
+
+/* Ventana por la que solo se ve 1 vídeo */
+.viewport {
+    width: var(--w);
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: max-content;
+    transition: transform .5s ease;
+
+    .video {
+        width: var(--w);
+        aspect-ratio: 760 / 430;
+        flex-shrink: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background:
+            radial-gradient(circle at 15% 20%, rgba(0, 0, 0, .35), transparent 35%),
+            radial-gradient(circle at 85% 80%, rgba(0, 0, 0, .35), transparent 35%),
+            linear-gradient(135deg, #a8921c, #c9ab2e 50%, #8d7714);
+
+        iframe {
+            width: 82%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .7);
+        }
+    }
+}
+
+/*------------ Controlar el Slider ---------------*/
+
+/* Cada posición desplaza la cinta un tercio de su ancho (3 vídeos) */
+#s1:checked ~ .viewport .slider {transform: translateX(0);}
+#s2:checked ~ .viewport .slider {transform: translateX(-33.3333%);}
+#s3:checked ~ .viewport .slider {transform: translateX(-66.6666%);}
+
+/* Punto activo */
+#s1:checked ~ .dots label[for="s1"],
+#s2:checked ~ .dots label[for="s2"],
+#s3:checked ~ .dots label[for="s3"] {
+    background-color: #d9993a;
+    transform: scale(1.1);
+}
+
+/* Primera posición: solo flecha siguiente */
+#s1:checked ~ .n1 {display: block}
+
+/* Posición del medio: anterior (p2) y siguiente (n2) */
+#s2:checked ~ .p2,
+#s2:checked ~ .n2 {display: block}
+
+/* Última posición: solo flecha anterior */
+#s3:checked ~ .p3 {display: block}
+
+/*----------------------------------------- ON TOUR -------------------------------------*/
+
+.tour {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #15171c;
+}
+
+.tour-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 6%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.tour-body {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.tour-list {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .8rem;
+}
+
+.event {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    align-items: center;
+    padding: .8rem 1rem;
+    background-color: #4a0d17;
+    border: 1px solid #f3e9dc;
+    border-radius: 10px;
+    position: relative;
+}
+
+.event::after {
+    content: "";
+    position: absolute;
+    right: .8rem;
+    bottom: .6rem;
+    width: 34px;
+    height: 34px;
+
+    background-image: url(img/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.event-date {
+    flex: 0 0 80px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    color: #f3e9dc;
+    font-family: Hahmlet, serif;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.event-date span {
+    font-size: 1.8rem;
+}
+
+.event-date strong {
+    font-size: 2.6rem;
+}
+
+.event-info {
+    flex: 1;
+}
+
+.event-info h3 {
+    font-size: .85rem;
+    text-transform: none;
+    font-family: Hahmlet, serif;
+    font-weight: 700;
+    color: #f3e9dc;
+}
+
+.event-info p {
+    font-size: .8rem;
+    margin: .2rem 0 .6rem;
+}
+
+.event-buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+.btn-small {
+    padding: .35rem 1.4rem;
+    background-color: #d9993a;
+    color: #4a0d17;
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid #f3e9dc;
+    border-radius: 3px;
+}
+
+.btn-small:hover {
+    background-color: #f3e9dc;
+}
+
+/*----------------------------------------- STORE -------------------------------------*/
+
+.store {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #4a0d17;
+}
+
+.store-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 5%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.store-body {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.store-group {
+    flex: 1;
+
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem 1.5rem;
+    align-content: flex-start;
+}
+
+.store-divider {
+    flex: 0 0 2px;
+    background-color: #d9993a;
+}
+
+.product {
+    flex: 1 0 40%;
+    max-width: 48%;
+}
+
+.product-pic {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    border-radius: 6px 6px 0 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-footer {
+    padding: .5rem .8rem;
+    background-color: #d9993a;
+    color: #4a0d17;
+    border-radius: 0 0 6px 6px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+}
+
+.product-footer span {
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.product-footer img {
+    width: 24px;
+    height: 24px;
+    background-color: #4a0d17;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*----------------------------------------- CONTACT -------------------------------------*/
+
+.contact {
+    width: 100%;
+    min-height: 80vh;
+    background-color: #15171c;
+}
+
+.contact-container {
+    width: 100%;
+    min-height: 80vh;
+    padding: 4rem 8%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.contact-body {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+form {
+    flex: 2;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: .7rem;
+    background-color: #15171c;
+    color: #f3e9dc;
+    border: 1px solid #5a5d66;
+    border-radius: 4px;
+    font-family: Hahmlet, serif;
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+textarea {
+    height: 160px;
+    resize: none;
+}
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+    outline: none;
+    border-color: #d9993a;
+}
+
+.submit {
+    width: 50%;
+    padding: .7rem;
+    background-color: #d9993a;
+    color: #4a0d17;
+    font-family: Hahmlet, serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #f3e9dc;
+}
+
+.contact-info {
+    flex: 2;
+    font-size: .95rem;
+    line-height: 1.6;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+}
+
+.contact-info strong {
+    color: #d9993a;
+}
+
+.social {
+    display: flex;
+    gap: .8rem;
+}
+
+.social a {
+    padding: 8px;
+    background-color: #d9993a;
+    border-radius: 10px;
+    display: block;
+}
+
+.social a:hover {
+    background-color: #f3e9dc;
+}
+
+.social img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    filter: brightness(0);
+}
+
+.contact-info a {
+    color: #f3e9dc;
+    text-decoration: underline;
+}
+
+.contact-nav {
+    flex: 1;
+    padding-left: 2rem;
+    border-left: 2px solid #d9993a;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+.contact-nav a {
+    color: #d9993a;
+    font-family: Hahmlet, serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.contact-nav a:hover {
+    color: #f3e9dc;
+}
+
+/*----------------------------------------- FOOTER -------------------------------------*/
+
+footer {
+    width: 100%;
+    padding: 1.2rem 5%;
+    background-color: #4a0d17;
+    border-top: 1px solid #2c2f36;
+}
+
+.footer-container {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    flex: 0 0 60px;
+    height: 60px;
+
+    background-image: url(img/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+footer p {
+    flex: 1;
+    text-align: center;
+    font-size: .7rem;
+}
+
+footer .social img {
+    width: 32px;
+    height: 32px;
+}
+
+/*------------------------------------------------ MediaQueries --------------------------*/
+
+@media screen and (max-width: 1100px) {
+    #menu {
+        gap: .9rem;
+    }
+
+    #menu li a {
+        font-size: .8rem;
+    }
+}
+
+/* ===================== TABLET Y MÓVIL (hasta 900px) ===================== */
+@media screen and (max-width: 900px) {
+
+    /* Altura de la cabecera: la usan la cabecera, el menú desplegable, el hero y el scroll */
+    :root {
+        --header-h: 64px;
+    }
+
+    html {
+        scroll-padding-top: var(--header-h); /* la cabecera fija no tapa el título al saltar a una sección */
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    /* Las secciones dejan de ocupar toda la pantalla: ahora crecen con su contenido */
+    .bio, .bio-container,
+    .albums, .albums-container,
+    .tour, .tour-container,
+    .store, .store-container,
+    .contact, .contact-container {
+        min-height: auto;
+    }
+
+    /* ---- Cabecera + menú desplegable ---- */
+    header {
+        height: var(--header-h);
+        min-height: 0;
+    }
+
+    nav {
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+
+    .logo {
+        padding: .75rem 0;
+    }
+
+    .img-logo {
+        max-width: 240px;
+    }
+
+    /* La lista pasa a ser un panel que cuelga de la cabecera.
+       Cerrado por defecto; #menu:target (botón hamburguesa) lo abre */
+    #menu {
+        position: fixed;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        flex: none;
+        height: auto;
+        flex-flow: column nowrap;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+
+        background-color: #4a0d17;
+        border-top: 1px solid rgba(217, 153, 58, .35);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, .5);
+
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity .25s, transform .25s, visibility .25s;
+    }
+
+    #menu:target {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+
+    #menu li a {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(243, 233, 220, .12);
+    }
+
+    #menu li:last-child a {
+        border-bottom: 0;
+    }
+
+    /* Botón hamburguesa (abrir) y aspa (cerrar): zona táctil de 44px */
+    .burger {
+        position: relative;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .burger-open {
+        display: block;
+        background:
+            linear-gradient(#d9993a, #d9993a) center 28% / 26px 3px no-repeat,
+            linear-gradient(#d9993a, #d9993a) center 50% / 26px 3px no-repeat,
+            linear-gradient(#d9993a, #d9993a) center 72% / 26px 3px no-repeat;
+    }
+
+    .burger-close::before,
+    .burger-close::after {
+        content: "";
+        position: absolute;
+        left: 9px;
+        right: 9px;
+        top: 50%;
+        height: 3px;
+        margin-top: -1.5px;
+        background-color: #d9993a;
+        border-radius: 2px;
+    }
+
+    .burger-close::before {
+        transform: rotate(45deg);
+    }
+
+    .burger-close::after {
+        transform: rotate(-45deg);
+    }
+
+    /* Fondo oscuro bajo el menú: pulsar fuera lo cierra */
+    .menu-backdrop {
+        position: fixed;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: rgba(21, 23, 28, .7);
+    }
+
+    /* Menú abierto: se cambia hamburguesa por aspa y aparece el fondo */
+    #menu:target ~ .burger-open {display: none;}
+    #menu:target ~ .burger-close {display: block;}
+    #menu:target ~ .menu-backdrop {display: block;}
+
+    /* ---- Hero ---- */
+    .hero {
+        height: calc(100vh - var(--header-h));
+        height: calc(100svh - var(--header-h)); /* svh: descuenta la barra del navegador móvil */
+        min-height: 420px;
+    }
+
+    .line-1, .line-3 {
+        font-size: 3rem;
+    }
+
+    .hero-container {
+        justify-content: center;
+    }
+
+    /* ---- Layout en una columna ---- */
+    .bio-container, .featured, .albums-list, .tour-body, .contact-body {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    /* Biografía: el título va primero, luego foto, fundación, trayectoria y línea temporal.
+       .bio-left y .bio-right "desaparecen" (contents) para poder ordenar sus hijos entre sí */
+    .bio-left, .bio-right {
+        display: contents;
+    }
+
+    .bio-right h2          {order: 1;}
+    .bio-left img          {order: 2;}
+    .bio-right p           {order: 3;}
+    .bio-left-text         {order: 4;}
+    .bio-timeline          {order: 5;}
+
+    .bio-left img,
+    .bio-left-text,
+    .bio-right p,
+    .bio-timeline {
+        width: 100%;
+        max-width: 680px;
+    }
+
+    .bio-timeline {
+        min-height: 320px;
+    }
+
+    /* Álbum destacado: la portada ya sale arriba, no hace falta repetirla dentro de la tarjeta */
+    .featured-cover {
+        flex: none;
+        width: 70%;
+        max-width: 360px;
+    }
+
+    .featured-card {
+        flex: none;
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .featured-card img {
+        display: none;
+    }
+
+    .featured-info {
+        flex: none;
+        padding-top: 0;
+    }
+
+    .album, .tour-list, form, .contact-info, .contact-nav {
+        width: 100%;
+        flex: none;
+    }
+
+    .carousel {
+        --w: 80vw;
+        padding: 0;
+    }
+
+    .carousel .arrow {
+        font-size: 2.5rem;
+        top: calc(var(--w) * 0.2829 + 0px);
+    }
+
+    .carousel .prev {
+        left: -2vw;
+    }
+
+    .carousel .next {
+        right: -2vw;
+    }
+
+    .store-body {
+        flex-flow: column nowrap;
+    }
+
+    .store-divider {
+        flex: 0 0 2px;
+        width: 100%;
+    }
+
+    .contact-nav {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 2px solid #d9993a;
+        padding-top: 1rem;
+    }
+
+    .submit {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-flow: column nowrap;
+    }
+}
+
+/* ===================== MÓVIL (hasta 600px) ===================== */
+@media screen and (max-width: 600px) {
+
+    h2 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* ---- Hero ---- */
+    .hero-container {
+        padding: 0 5%;
+    }
+
+    .hero-legend {
+        gap: 1.5rem;
+    }
+
+    .line-1, .line-3 {
+        font-size: 2.8rem;
+    }
+
+    .line-2 {
+        font-size: 1.5rem;
+    }
+
+    /* Botones apilados: más fáciles de pulsar con el pulgar */
+    .hero-buttons {
+        flex-flow: column nowrap;
+        width: 100%;
+        max-width: 260px;
+        gap: .8rem;
+    }
+
+    .btn {
+        padding: .9rem 1.2rem;
+        text-align: center;
+    }
+
+    /* ---- Biography ---- */
+    .bio-container {
+        padding: 3rem 6%;
+        gap: 1.8rem;
+    }
+
+    .bio-right h2 {
+        font-size: 2rem;
+    }
+
+    .bio-left-text {
+        gap: 1.2rem;
+    }
+
+    .bio-left-text p, .bio-right p {
+        font-size: .95rem;
+        line-height: 1.75;
+    }
+
+    /* La línea temporal ocupa todo el ancho y mantiene la proporción de la imagen (828 x 769) */
+    .bio-timeline {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 828 / 769;
+    }
+
+    /* ---- Albums ---- */
+    .albums-container {
+        padding: 3rem 6%;
+        gap: 2rem;
+    }
+
+    .featured {
+        gap: 1.5rem;
+    }
+
+    .featured-info {
+        width: 100%;
+    }
+
+    .featured-info h3 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .featured-info ol {
+        width: fit-content;
+        margin: 0 auto;
+        padding-left: 1.8rem;
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+
+    .featured-card, .album {
+        padding: 1rem;
+    }
+
+    .albums-list {
+        margin-top: 0;
+        gap: 1rem;
+    }
+
+    .album-main ol {
+        font-size: .9rem;
+    }
+
+    .btn-play {
+        padding: .7rem 2rem;
+    }
+
+    /* ---- Vídeos (carrusel) ----
+       El vídeo ocupa casi todo el ancho y las flechas bajan a la fila de los puntos
+       para no tapar el reproductor ni salirse de la pantalla */
+    .videos-container {
+        padding: 2.5rem 6%;
+    }
+
+    .carousel {
+        --w: 88vw;
+        gap: 1.2rem;
+        padding: 0 0 .5rem;
+    }
+
+    .slider .video iframe {
+        width: 92%;
+    }
+
+    .carousel .arrow {
+        top: auto;
+        bottom: -7px; /* centradas con la fila de puntos */
+        width: 48px;
+        height: 48px;
+        font-size: 2.6rem;
+        line-height: 48px;
+        text-align: center;
+        transform: none;
+    }
+
+    .carousel .arrow:hover {
+        transform: none;
+    }
+
+    .carousel .prev {
+        left: 0;
+    }
+
+    .carousel .next {
+        right: 0;
+    }
+
+    /* ---- On Tour ---- */
+    .tour-container {
+        padding: 3rem 5%;
+        gap: 2rem;
+    }
+
+    .tour-body {
+        gap: .8rem;
+    }
+
+    .event {
+        padding: .8rem;
+        gap: .8rem;
+    }
+
+    .event::after {
+        width: 28px;
+        height: 28px;
+    }
+
+    .event-date {
+        flex: 0 0 56px;
+    }
+
+    .event-date span {
+        font-size: 1.1rem;
+    }
+
+    .event-date strong {
+        font-size: 2rem;
+    }
+
+    .event-info h3 {
+        font-size: .85rem;
+        line-height: 1.35;
+    }
+
+    .event-info p {
+        font-size: .78rem;
+    }
+
+    .event-buttons {
+        flex-wrap: wrap;
+    }
+
+    .btn-small {
+        padding: .55rem .9rem;
+        font-size: .75rem;
+        white-space: nowrap;
+    }
+
+    /* ---- Store ---- */
+    .store-container {
+        padding: 3rem 5%;
+        gap: 2rem;
+    }
+
+    .store-body {
+        gap: 1.5rem;
+    }
+
+    .store-group {
+        gap: 1.2rem .8rem;
+    }
+
+    /* Todas las tarjetas de una fila miden lo mismo aunque el nombre ocupe 1 o 2 líneas */
+    .product {
+        flex: 1 0 44%;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .product-footer {
+        flex: 1;
+    }
+
+    .product-footer span {
+        font-size: .75rem;
+        line-height: 1.3;
+    }
+
+    .product-footer img {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+    }
+
+    /* ---- Contact ---- */
+    .contact-container {
+        padding: 3rem 6%;
+        gap: 2rem;
+    }
+
+    .contact-body {
+        gap: 2rem;
+    }
+
+    /* 16px mínimo: si es menor, iOS hace zoom automático al enfocar el campo */
+    input[type=text], input[type=email], textarea {
+        padding: .85rem;
+        font-size: 1rem;
+    }
+
+    textarea {
+        height: 140px;
+    }
+
+    .contact-info {
+        font-size: .9rem;
+    }
+
+    .contact-info a {
+        overflow-wrap: anywhere;
+    }
+
+    .contact-nav {
+        flex-flow: row wrap;
+        gap: .4rem 1.5rem;
+    }
+
+    .contact-nav a {
+        display: inline-block;
+        padding: .4rem 0;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+        padding: 1.5rem 6%;
+    }
+
+    footer p {
+        font-size: .75rem;
+        line-height: 1.6;
+    }
+}
+
+/* ===================== MÓVIL PEQUEÑO (hasta 380px) ===================== */
+@media screen and (max-width: 380px) {
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .img-logo {
+        max-width: 190px;
+    }
+
+    .line-1, .line-3 {
+        font-size: 2.4rem;
+    }
+
+    .line-2 {
+        font-size: 1.3rem;
+    }
+
+    .bio-right h2 {
+        font-size: 1.7rem;
+    }
+
+    .featured-info h3 {
+        font-size: 1.7rem;
+    }
+
+    .album-main {
+        gap: .8rem;
+    }
+
+    .album-main img {
+        flex: 0 0 76px;
+        width: 76px;
+        height: 76px;
+    }
+
+    /* Sin hueco para el escudo decorativo junto a los botones */
+    .event::after {
+        display: none;
+    }
+
+    .event-date {
+        flex-basis: 48px;
+    }
+}
