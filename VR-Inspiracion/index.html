@@ -23,13 +23,9 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <!-- MENÚ MÓVIL (solo CSS, sin JS): mismo truco del carrusel pero con :target.
+            <!-- MENÚ MÓVIL: mismo sistema del carrusel pero con :target.
                  - "#menu" es el estado abierto: #menu:target muestra la lista.
-                 - Al pulsar cualquier enlace del menú la URL pasa a "#biography", "#albums"...
-                   y #menu deja de ser :target, así que el menú se cierra solo.
-                 - "#cerrar" no existe en la página: cambia el :target sin hacer scroll.
-                 Van DESPUÉS del <ul> porque el selector "~" solo mira a los hermanos que vienen después.
-                 En escritorio los tres están ocultos. -->
+                 - "#cerrar" no existe en la página: cambia el :target sin hacer scroll.-->
             <a class="burger burger-open" href="#menu" aria-label="Open menu" aria-controls="menu"></a>
             <a class="burger burger-close" href="#cerrar" aria-label="Close menu"></a>
             <a class="menu-backdrop" href="#cerrar" aria-hidden="true" tabindex="-1"></a>
@@ -224,7 +220,7 @@
                             <p>C. Condes de Bustillo, 17, 41010 Sevilla</p>
                             <div class="event-buttons">
                                 <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Teatro%20Triana%2C%20C.%20Condes%20de%20Bustillo%2C%2017%2C%2041010%20Sevilla" target="_blank" rel="noopener">View map</a>
-                                <a class="btn-small" href="#">Ticket</a>
+                                <a class="btn-small" href="ticket.html">Ticket</a>
                             </div>
                         </div>
                     </div>
@@ -236,7 +232,7 @@
                             <p>C. José de Gálvez, 6, 41092 Sevilla</p>
                             <div class="event-buttons">
                                 <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Teatro%20Central%2C%20C.%20Jos%C3%A9%20de%20G%C3%A1lvez%2C%206%2C%2041092%20Sevilla" target="_blank" rel="noopener">View map</a>
-                                <a class="btn-small" href="#">Ticket</a>
+                                <a class="btn-small" href="ticket.html">Ticket</a>
                             </div>
                         </div>
                     </div>
@@ -248,7 +244,7 @@
                             <p>18230 Atarfe, Granada</p>
                             <div class="event-buttons">
                                 <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Plaza%20de%20Toros%2C%2018230%20Atarfe%2C%20Granada" target="_blank" rel="noopener">View map</a>
-                                <a class="btn-small" href="#">Ticket</a>
+                                <a class="btn-small" href="ticket.html">Ticket</a>
                             </div>
                         </div>
                     </div>
@@ -272,7 +268,7 @@
                             <p>C. Acera del Casino, s/n, Centro, 18009 Granada</p>
                             <div class="event-buttons">
                                 <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=C.%20Acera%20del%20Casino%2C%20s/n%2C%20Centro%2C%2018009%20Granada" target="_blank" rel="noopener">View map</a>
-                                <a class="btn-small" href="#">Ticket</a>
+                                <a class="btn-small" href="ticket.html">Ticket</a>
                             </div>
                         </div>
                     </div>
@@ -284,7 +280,7 @@
                             <p>Pl. Alfredo Kraus, 04007 Almería</p>
                             <div class="event-buttons">
                                 <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Teatro%20Maestro%20Padilla%2C%20Pl.%20Alfredo%20Kraus%2C%2004007%20Almer%C3%ADa" target="_blank" rel="noopener">View map</a>
-                                <a class="btn-small" href="#">Ticket</a>
+                                <a class="btn-small" href="ticket.html">Ticket</a>
                             </div>
                         </div>
                     </div>
@@ -296,7 +292,7 @@
                             <p>C. Virgen de la Paz, 15, 29400 Ronda, Málaga</p>
                             <div class="event-buttons">
                                 <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Plaza%20de%20Toros%20de%20Ronda%2C%20C.%20Virgen%20de%20la%20Paz%2C%2015%2C%2029400%20Ronda%2C%20M%C3%A1laga" target="_blank" rel="noopener">View map</a>
-                                <a class="btn-small" href="#">Ticket</a>
+                                <a class="btn-small" href="ticket.html">Ticket</a>
                             </div>
                         </div>
                     </div>
@@ -308,7 +304,7 @@
                             <p>C. Colón, s/n, 23001 Jaén</p>
                             <div class="event-buttons">
                                 <a class="btn-small" href="https://www.google.com/maps/search/?api=1&amp;query=Teatro%20Darymelia%2C%20C.%20Col%C3%B3n%2C%20s/n%2C%2023001%20Ja%C3%A9n" target="_blank" rel="noopener">View map</a>
-                                <a class="btn-small" href="#">Ticket</a>
+                                <a class="btn-small" href="ticket.html">Ticket</a>
                             </div>
                         </div>
                     </div>
@@ -385,8 +381,8 @@
                     <p><strong>Location:</strong> Pol. Ind. San Jerónimo, Calle Tamarguillo nº 3, 41015 Sevilla</p>
                     <p><strong>Social media platforms for video and audio content playback:</strong></p>
                     <div class="social">
-                        <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
-                        <a href="https://open.spotify.com/artist/6TnGRTtdmYc90AOGJYsYke" target="_blank" rel="noopener"><img src="img/spotify.png" alt="Spotify"></a>
+                        <a href="https://www.youtube.com/@AgrupacionVR"><img src="img/youtube.png" alt="YouTube"></a>
+                        <a href="https://open.spotify.com/intl-es/artist/3OlFOvZ0vbcj5GcvRshuuM?si=NsBgiu__RTaOgpIcCxcEMQ" target="_blank" rel="noopener"><img src="img/spotify.png" alt="Spotify"></a>
                     </div>
                 </div>
 
@@ -408,9 +404,9 @@
             <div class="footer-logo"></div>
             <p>©2026 Agrupación Musical Virgen de los Reyes. All rights reserved. | Privacity Policy | Term of Service</p>
             <div class="social">
-                <a href="#"><img src="img/tik_tok.png" alt="TikTok"></a>
-                <a href="#"><img src="img/x.png" alt="X"></a>
-                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@agrupacionvr"><img src="img/tik_tok.png" alt="TikTok"></a>
+                <a href="https://x.com/AgrupacionVR"><img src="img/x.png" alt="X"></a>
+                <a href="https://x.com/AgrupacionVR"><img src="img/instagram.png" alt="Instagram"></a>
             </div>
         </div>
     </footer>

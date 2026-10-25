@@ -533,7 +533,7 @@ nav {
 
 /*------------ Controlar el Slider ---------------*/
 
-/* Cada posición desplaza la cinta un tercio de su ancho (3 vídeos) */
+/* Cada posición desplaza la cinta(3 vídeos) */
 #s1:checked ~ .viewport .slider {transform: translateX(0);}
 #s2:checked ~ .viewport .slider {transform: translateX(-33.3333%);}
 #s3:checked ~ .viewport .slider {transform: translateX(-66.6666%);}
@@ -668,7 +668,7 @@ nav {
     font-size: .8rem;
     font-weight: 700;
     text-transform: uppercase;
-    border: 2px solid #f3e9dc;
+    border: 1px solid #f3e9dc;
     border-radius: 3px;
 }
 
@@ -761,7 +761,6 @@ nav {
 .product-footer img {
     width: 24px;
     height: 24px;
-    background-color: #4a0d17;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -861,8 +860,7 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
 }
 
 .social a {
-    padding: 8px;
-    background-color: #d9993a;
+    padding: 4px;
     border-radius: 10px;
     display: block;
 }
@@ -875,7 +873,7 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
     width: 32px;
     height: 32px;
     display: block;
-    filter: brightness(0);
+    
 }
 
 .contact-info a {
@@ -1041,7 +1039,7 @@ footer .social img {
         border-bottom: 0;
     }
 
-    /* Botón hamburguesa (abrir) y aspa (cerrar): zona táctil de 44px */
+    /* Botón hamburguesa (abrir) y X (cerrar) */
     .burger {
         position: relative;
         flex: 0 0 44px;
