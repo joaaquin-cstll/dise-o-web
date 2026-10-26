@@ -1,8 +1,7 @@
-/* Tipografía usada en la web. Se descarga de Google Fonts. */
+/* Tipografía usada de Google Fonts. */
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@700&display=swap');
 
-/* VARIABLES GENERALES: cambia estos valores aquí para actualizar toda la web.
-   Los nombres describen para qué sirve cada color o tipo de letra. */
+/*--- VARIABLES ---*/
 :root {
     --color-granate: #4a0d17;
     --color-oscuro: #15171c;
@@ -14,28 +13,18 @@
     --fuente-principal: 'Hahmlet', serif;
 }
 
-
-/* Regla inicial: todos los elementos parten sin márgenes ni rellenos sorpresa.
-   box-sizing hace que el ancho incluya también el borde y el relleno. */
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* ----------------- Colores de la web ---------------------
-   Granate:  var(--color-granate)
-   Oscuro:   var(--color-oscuro)
-   Dorado:   var(--color-dorado)
-   Claro:    var(--color-claro)
------------------------------------------------------------*/
-
-/* Al pulsar un enlace del menú, la página se desplaza suavemente a esa sección. */
+/* Desplazamiento sueva al hacer scroll*/
 html {
     scroll-behavior: smooth;
 }
 
-/* Define el aspecto general de la página: ancho, letra y colores de fondo y texto. */
+/* Aspecto general de la página*/
 body, html {
     width: 100%;
     font-weight: 700;
@@ -44,7 +33,7 @@ body, html {
     color: var(--color-claro);
 }
 
-/* Aplica el mismo estilo base a los títulos principales de la web. */
+/* Estilo base a títulos principales */
 h1, h2, h3 {
     font-family: var(--fuente-principal);
     text-transform: uppercase;
@@ -54,20 +43,19 @@ h1, h2, h3 {
 h2 {
     font-size: 2.2rem;
     color: var(--color-dorado);
-    letter-spacing: 2px;
 }
 
-/* Quita las viñetas y la numeración por defecto de las listas. */
+/* Quitar estilos al las listas */
 ul, ol {
     list-style-type: none;
 }
 
-/* Quita el subrayado que los enlaces suelen tener por defecto. */
+/* Quita el subrayado */
 a {
     text-decoration: none;
 }
 
-/* Evita que las imágenes sobresalgan de su espacio disponible. */
+/* Para que no sobresalgan */
 img {
     max-width: 100%;
 }
@@ -80,12 +68,12 @@ header {
     min-height: 70px;
     background-color: var(--color-granate);
 
-    position: sticky;
+    position: sticky; /*Cabecera fija arriba de la página*/
     top: 0;
-    z-index: 10;
+    z-index: 10; /*Obliga que la cabecera se superponga*/
 }
 
-/* Organiza los elementos de navegación en una fila y los alinea verticalmente. */
+/* Organización del nav */
 nav {
     width: 100%;
     height: 100%;
@@ -97,14 +85,14 @@ nav {
     justify-content: center;
 }
 
-/* Reserva el espacio de la zona donde aparece el logotipo. */
+/* espaciado del logo */
 .logo {
     flex: 1;
     height: 100%;
     padding: .8rem 0;
 }
 
-/* Muestra el logotipo como imagen de fondo y ajusta su tamaño sin deformarlo. */
+/* ajustar logo */
 .img-logo {
     width: 100%;
     max-width: 330px;
@@ -116,7 +104,7 @@ nav {
     background-position: left center;
 }
 
-/* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
+/* posición, separación y apariencia de enlaces del menú. también menu desplegable */
 #menu {
     flex: 2;
     height: 100%;
@@ -126,7 +114,7 @@ nav {
     align-items: center;
 }
 
-/* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
+/* posición, separación y apariencia de los enlaces del menú. también anel desplegable. */
 #menu li a {
     font-family: var(--fuente-principal);
     font-weight: 700;
@@ -135,14 +123,12 @@ nav {
     font-size: .95rem;
 }
 
-/* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
 #menu li a:hover {
     color: var(--color-claro);
 }
 
-/* Menú móvil: en escritorio no existe. Se activa en los MediaQueries del final */
 .burger,
-/* Crea una capa oscura detrás del menú móvil para distinguirlo del contenido. */
+/* capa oscura para distinguir cuando se despliega*/
 .menu-backdrop {
     display: none;
 }
@@ -160,26 +146,26 @@ nav {
     border-radius: 4px;
 }
 
-/* Define la apariencia común de los botones y sus variantes. */
+/* Botón principal*/
 .btn-fill {
     background-color: var(--color-dorado);
     color: var(--color-granate);
 }
 
-/* Define la apariencia común de los botones y sus variantes. */
+/* efecto al pasar el ratón*/
 .btn-fill:hover {
     background-color: transparent;
     color: var(--color-dorado);
 }
 
-/* Define la apariencia común de los botones y sus variantes. */
+/* Botón secundario*/
 .btn-line {
-    background-color: rgba(74, 13, 23, .6);
+    background-color: var(--color-granate);
     color: var(--color-dorado);
     border-color: var(--color-granate-claro);
 }
 
-/* Define la apariencia común de los botones y sus variantes. */
+/* efecto al pasar el raton */
 .btn-line:hover {
     background-color: var(--color-dorado);
     color: var(--color-granate);
@@ -197,14 +183,14 @@ nav {
     background-repeat: no-repeat;
 }
 
-/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
+/* Da tamaño y posición a la sección */
 .hero-container {
     width: 100%;
     height: 100%;
     padding: 0 8%;
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start; /*agrupan al inicio de la línea*/
     align-items: center;
 }
 
