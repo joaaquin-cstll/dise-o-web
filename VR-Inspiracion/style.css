@@ -1,7 +1,22 @@
-/*- Google Fonts -*/
+/* Tipografía usada en la web. Se descarga de Google Fonts. */
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@700&display=swap');
 
+/* VARIABLES GENERALES: cambia estos valores aquí para actualizar toda la web.
+   Los nombres describen para qué sirve cada color o tipo de letra. */
+:root {
+    --color-granate: #4a0d17;
+    --color-oscuro: #15171c;
+    --color-dorado: #d9993a;
+    --color-claro: #f3e9dc;
+    --color-granate-claro: #8a3a40;
+    --color-borde-oscuro: #5a5d66;
+    --color-tarjeta-oscura: #2c2f36;
+    --fuente-principal: 'Hahmlet', serif;
+}
 
+
+/* Regla inicial: todos los elementos parten sin márgenes ni rellenos sorpresa.
+   box-sizing hace que el ancho incluya también el borde y el relleno. */
 *{
     box-sizing: border-box;
     margin: 0;
@@ -9,43 +24,50 @@
 }
 
 /* ----------------- Colores de la web ---------------------
-   Granate:  #4a0d17
-   Oscuro:   #15171c
-   Dorado:   #d9993a
-   Claro:    #f3e9dc
+   Granate:  var(--color-granate)
+   Oscuro:   var(--color-oscuro)
+   Dorado:   var(--color-dorado)
+   Claro:    var(--color-claro)
 -----------------------------------------------------------*/
 
+/* Al pulsar un enlace del menú, la página se desplaza suavemente a esa sección. */
 html {
     scroll-behavior: smooth;
 }
 
+/* Define el aspecto general de la página: ancho, letra y colores de fondo y texto. */
 body, html {
     width: 100%;
     font-weight: 700;
-    font-family: Hahmlet, serif;
-    background-color: #15171c;
-    color: #f3e9dc;
+    font-family: var(--fuente-principal);
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
 }
 
+/* Aplica el mismo estilo base a los títulos principales de la web. */
 h1, h2, h3 {
-    font-family: Hahmlet, serif;
+    font-family: var(--fuente-principal);
     text-transform: uppercase;
 }
 
+/* Da tamaño, color y separación entre letras a los títulos de sección. */
 h2 {
     font-size: 2.2rem;
-    color: #d9993a;
+    color: var(--color-dorado);
     letter-spacing: 2px;
 }
 
+/* Quita las viñetas y la numeración por defecto de las listas. */
 ul, ol {
     list-style-type: none;
 }
 
+/* Quita el subrayado que los enlaces suelen tener por defecto. */
 a {
     text-decoration: none;
 }
 
+/* Evita que las imágenes sobresalgan de su espacio disponible. */
 img {
     max-width: 100%;
 }
@@ -56,13 +78,14 @@ header {
     width: 100%;
     height: 10vh;
     min-height: 70px;
-    background-color: #4a0d17;
+    background-color: var(--color-granate);
 
     position: sticky;
     top: 0;
     z-index: 10;
 }
 
+/* Organiza los elementos de navegación en una fila y los alinea verticalmente. */
 nav {
     width: 100%;
     height: 100%;
@@ -74,12 +97,14 @@ nav {
     justify-content: center;
 }
 
+/* Reserva el espacio de la zona donde aparece el logotipo. */
 .logo {
     flex: 1;
     height: 100%;
     padding: .8rem 0;
 }
 
+/* Muestra el logotipo como imagen de fondo y ajusta su tamaño sin deformarlo. */
 .img-logo {
     width: 100%;
     max-width: 330px;
@@ -91,6 +116,7 @@ nav {
     background-position: left center;
 }
 
+/* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
 #menu {
     flex: 2;
     height: 100%;
@@ -100,20 +126,23 @@ nav {
     align-items: center;
 }
 
+/* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
 #menu li a {
-    font-family: Hahmlet, serif;
+    font-family: var(--fuente-principal);
     font-weight: 700;
-    color: #d9993a;
+    color: var(--color-dorado);
     text-transform: uppercase;
     font-size: .95rem;
 }
 
+/* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
 #menu li a:hover {
-    color: #f3e9dc;
+    color: var(--color-claro);
 }
 
 /* Menú móvil: en escritorio no existe. Se activa en los MediaQueries del final */
 .burger,
+/* Crea una capa oscura detrás del menú móvil para distinguirlo del contenido. */
 .menu-backdrop {
     display: none;
 }
@@ -123,33 +152,37 @@ nav {
 .btn {
     display: inline-block;
     padding: .8rem 1.6rem;
-    font-family: Hahmlet, serif;
+    font-family: var(--fuente-principal);
     font-weight: 700;
     font-size: .9rem;
     text-transform: uppercase;
-    border: 2px solid #d9993a;
+    border: 2px solid var(--color-dorado);
     border-radius: 4px;
 }
 
+/* Define la apariencia común de los botones y sus variantes. */
 .btn-fill {
-    background-color: #d9993a;
-    color: #4a0d17;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
 }
 
+/* Define la apariencia común de los botones y sus variantes. */
 .btn-fill:hover {
     background-color: transparent;
-    color: #d9993a;
+    color: var(--color-dorado);
 }
 
+/* Define la apariencia común de los botones y sus variantes. */
 .btn-line {
     background-color: rgba(74, 13, 23, .6);
-    color: #d9993a;
-    border-color: #8a3a40;
+    color: var(--color-dorado);
+    border-color: var(--color-granate-claro);
 }
 
+/* Define la apariencia común de los botones y sus variantes. */
 .btn-line:hover {
-    background-color: #d9993a;
-    color: #4a0d17;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
 }
 
 /*----------------------------------------- HERO -------------------------------------*/
@@ -164,6 +197,7 @@ nav {
     background-repeat: no-repeat;
 }
 
+/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
 .hero-container {
     width: 100%;
     height: 100%;
@@ -174,6 +208,7 @@ nav {
     align-items: center;
 }
 
+/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
 .hero-legend {
     display: flex;
     flex-flow: column nowrap;
@@ -181,24 +216,29 @@ nav {
     gap: 2rem;
 }
 
+/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
 .hero-legend h1 {
     text-align: center;
-    color: #d9993a;
+    color: var(--color-dorado);
     line-height: 1.1;
 }
 
+/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
 .hero-legend h1 span {
     display: block;
 }
 
+/* Ajusta el tamaño de las distintas líneas del título principal. */
 .line-1, .line-3 {
     font-size: 4.2rem;
 }
 
+/* Ajusta el tamaño de las distintas líneas del título principal. */
 .line-2 {
     font-size: 2.2rem;
 }
 
+/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -209,9 +249,10 @@ nav {
 .bio {
     width: 100%;
     min-height: 100vh;
-    background-color: #4a0d17;
+    background-color: var(--color-granate);
 }
 
+/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-container {
     width: 100%;
     min-height: 100vh;
@@ -224,6 +265,7 @@ nav {
     justify-content: center;
 }
 
+/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-left {
     flex: 1;
 
@@ -232,17 +274,20 @@ nav {
     gap: 3rem;
 }
 
+/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-left img {
     width: 100%;
     display: block;
 }
 
+/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-left-text {
     display: flex;
     flex-flow: column nowrap;
     gap: 1.5rem;
 }
 
+/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-right {
     flex: 1;
 
@@ -252,16 +297,19 @@ nav {
     gap: 2rem;
 }
 
+/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-right h2 {
     font-size: 2.6rem;
 }
 
+/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-left-text p, .bio-right p {
     font-size: 1rem;
     line-height: 1.9;
     font-weight: 700;
 }
 
+/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-timeline {
     width: 100%;
     height: 55vh;
@@ -278,9 +326,10 @@ nav {
 .albums {
     width: 100%;
     min-height: 100vh;
-    background-color: #15171c;
+    background-color: var(--color-oscuro);
 }
 
+/* Organiza la sección de álbumes y la lista de discos secundarios. */
 .albums-container {
     width: 100%;
     min-height: 100vh;
@@ -303,24 +352,28 @@ nav {
     gap: 3rem;
 }
 
+/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
 .featured-cover {
     flex: 0 0 28%;
     width: 28%;
     display: block;
 }
 
+/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
 .featured-info {
     flex: 1;
     align-self: flex-start;
     padding-top: 1.5rem;
 }
 
+/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
 .featured-info h3 {
     font-size: 2.6rem;
-    color: #f3e9dc;
+    color: var(--color-claro);
     margin-bottom: 1.5rem;
 }
 
+/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
 .featured-info ol {
     list-style-type: decimal;
     padding-left: 2.2rem;
@@ -328,10 +381,11 @@ nav {
     line-height: 2.2;
 }
 
+/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
 .featured-card {
     flex: 0 0 24%;
     padding: 1.2rem;
-    background-color: #4a0d17;
+    background-color: var(--color-granate);
     border-radius: 12px;
 
     display: flex;
@@ -340,11 +394,13 @@ nav {
     gap: 1.2rem;
 }
 
+/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
 .featured-card img {
     width: 75%;
     display: block;
 }
 
+/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
 .featured-card iframe {
     width: 100%;
     height: 80px;
@@ -363,6 +419,7 @@ nav {
     gap: 2.5rem;
 }
 
+/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
 .album {
     flex: 1;
     padding: 1.2rem;
@@ -373,11 +430,13 @@ nav {
     gap: 1.2rem;
 }
 
+/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
 .album h3 {
     font-size: 1.15rem;
-    color: #f3e9dc;
+    color: var(--color-claro);
 }
 
+/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
 .album-main {
     display: flex;
     flex-flow: row nowrap;
@@ -385,6 +444,7 @@ nav {
     align-items: center;
 }
 
+/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
 .album-main img {
     flex: 0 0 90px;
     width: 90px;
@@ -393,6 +453,7 @@ nav {
     border-radius: 8px;
 }
 
+/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
 .album-main ol {
     list-style-type: decimal;
     padding-left: 1.2rem;
@@ -400,20 +461,23 @@ nav {
     line-height: 2;
 }
 
+/* Define la apariencia común de los botones y sus variantes. */
 .btn-play {
     padding: .5rem 1.6rem;
-    background-color: #d9993a;
-    color: #4a0d17;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
     font-size: .8rem;
     font-weight: 700;
     text-transform: uppercase;
     border-radius: 3px;
 }
 
+/* Define la apariencia común de los botones y sus variantes. */
 .btn-play:hover {
-    background-color: #f3e9dc;
+    background-color: var(--color-claro);
 }
 
+/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
 .album iframe {
     width: 70%;
     height: 80px;
@@ -425,9 +489,10 @@ nav {
 
 .videos {
     width: 100%;
-    background-color: #4a0d17;
+    background-color: var(--color-granate);
 }
 
+/* Da espacio y fondo a la sección donde se muestran los vídeos. */
 .videos-container {
     width: 100%;
     padding: 3.5rem 5%;
@@ -436,94 +501,90 @@ nav {
     justify-content: center;
 }
 
-/* Medida de cada vídeo: se usa en la ventana, en la cinta y en la posición de las flechas */
+/* El carrusel muestra un vídeo cada vez. En pantallas grandes no supera 760px. */
 .carousel {
-    --w: min(760px, 62vw);
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     position: relative;
     gap: 1.5rem;
     padding: 0 8rem;
-
-    .arrow {
-        color: #d9993a;
-        position: absolute;
-        top: 45%;
-        transform: translateY(-50%);
-        font-size: 4.5rem;
-        line-height: 1;
-        cursor: pointer;
-        z-index: 9999;
-        user-select: none;
-        transition: transform .3s;
-
-        /* habilitar/deshabilitar flecha*/
-        display: none;
-
-        &:hover {
-            transform: translateY(-50%) scale(1.15);
-        }
-    }
-
-    .prev {
-        left: 1rem;
-    }
-
-    .next {
-        right: 1rem;
-    }
-
-    .dots {
-        display: flex;
-        gap: 14px;
-
-        label {
-            width: 18px;
-            height: 18px;
-            background-color: #f3e9dc;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background .3s, transform .3s;
-        }
-    }
 }
 
-/* Los radio button se ocultan: solo los usamos para interactuar con sus labels */
+/* Flechas para pasar al vídeo anterior o al siguiente. */
+.carousel .arrow {
+    color: var(--color-dorado);
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    font-size: 4.5rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 9999;
+    user-select: none;
+    transition: transform .3s;
+    display: none; /* Solo se muestra la flecha que corresponde al vídeo actual. */
+}
+
+/* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
+.carousel .arrow:hover {
+    transform: translateY(-50%) scale(1.15);
+}
+
+.carousel .prev { left: 1rem; }
+.carousel .next { right: 1rem; }
+
+/* Los puntos de abajo indican qué vídeo está seleccionado. */
+.carousel .dots {
+    display: flex;
+    gap: 14px;
+}
+
+/* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
+.carousel .dots label {
+    width: 18px;
+    height: 18px;
+    background-color: var(--color-claro);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background .3s, transform .3s;
+}
+
+/* Ocultamos los botones de selección; las flechas y los puntos los sustituyen. */
 .carousel input {
     display: none;
 }
 
-/* Ventana por la que solo se ve 1 vídeo */
+/* Esta ventana recorta los vídeos que quedan fuera del que se está mostrando. */
 .viewport {
-    width: var(--w);
+    width: min(760px, 62vw);
     overflow: hidden;
 }
 
+/* Los vídeos forman una cinta horizontal que se desplaza al elegir otro punto. */
 .slider {
     display: flex;
     width: max-content;
     transition: transform .5s ease;
+}
 
-    .video {
-        width: var(--w);
-        aspect-ratio: 760 / 430;
-        flex-shrink: 0;
+/* Coloca los vídeos en una fila y permite desplazarse suavemente entre ellos. */
+.slider .video {
+    width: min(760px, 62vw);
+    aspect-ratio: 760 / 430;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-dorado);
+}
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #d9993a;
-
-        iframe {
-            width: 82%;
-            aspect-ratio: 16 / 9;
-            border: 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .7);
-        }
-    }
+/* Coloca los vídeos en una fila y permite desplazarse suavemente entre ellos. */
+.slider .video iframe {
+    width: 82%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .7);
 }
 
 /*------------ Controlar el Slider ---------------*/
@@ -536,8 +597,9 @@ nav {
 /* Punto activo */
 #s1:checked ~ .dots label[for="s1"],
 #s2:checked ~ .dots label[for="s2"],
+/* Cuando se selecciona un vídeo, esta regla mueve el carrusel o marca el punto correspondiente. */
 #s3:checked ~ .dots label[for="s3"] {
-    background-color: #d9993a;
+    background-color: var(--color-dorado);
     transform: scale(1.1);
 }
 
@@ -556,9 +618,10 @@ nav {
 .tour {
     width: 100%;
     min-height: 100vh;
-    background-color: #15171c;
+    background-color: var(--color-oscuro);
 }
 
+/* Organiza la sección de próximos eventos y su lista. */
 .tour-container {
     width: 100%;
     min-height: 100vh;
@@ -570,6 +633,7 @@ nav {
     gap: 3rem;
 }
 
+/* Organiza la sección de próximos eventos y su lista. */
 .tour-body {
     width: 100%;
     flex: 1;
@@ -580,6 +644,7 @@ nav {
     align-items: flex-start;
 }
 
+/* Organiza la sección de próximos eventos y su lista. */
 .tour-list {
     flex: 1;
 
@@ -588,18 +653,20 @@ nav {
     gap: .8rem;
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event {
     display: flex;
     flex-flow: row nowrap;
     gap: 1rem;
     align-items: center;
     padding: .8rem 1rem;
-    background-color: #4a0d17;
-    border: 1px solid #f3e9dc;
+    background-color: var(--color-granate);
+    border: 1px solid var(--color-claro);
     border-radius: 10px;
     position: relative;
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event::after {
     content: "";
     position: absolute;
@@ -614,61 +681,70 @@ nav {
     background-position: center center;
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event-date {
     flex: 0 0 80px;
 
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    color: #f3e9dc;
-    font-family: Hahmlet, serif;
+    color: var(--color-claro);
+    font-family: var(--fuente-principal);
     text-transform: uppercase;
     line-height: 1;
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event-date span {
     font-size: 1.8rem;
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event-date strong {
     font-size: 2.6rem;
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event-info {
     flex: 1;
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event-info h3 {
     font-size: .85rem;
     text-transform: none;
-    font-family: Hahmlet, serif;
+    font-family: var(--fuente-principal);
     font-weight: 700;
-    color: #f3e9dc;
+    color: var(--color-claro);
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event-info p {
     font-size: .8rem;
     margin: .2rem 0 .6rem;
 }
 
+/* Da forma a una tarjeta de evento con fecha, información y decoración. */
 .event-buttons {
     display: flex;
     gap: .5rem;
 }
 
+/* Define la apariencia común de los botones y sus variantes. */
 .btn-small {
     padding: .35rem 1.4rem;
-    background-color: #d9993a;
-    color: #4a0d17;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
     font-size: .8rem;
     font-weight: 700;
     text-transform: uppercase;
-    border: 1px solid #f3e9dc;
+    border: 1px solid var(--color-claro);
     border-radius: 3px;
 }
 
+/* Define la apariencia común de los botones y sus variantes. */
 .btn-small:hover {
-    background-color: #f3e9dc;
+    background-color: var(--color-claro);
 }
 
 /*----------------------------------------- STORE -------------------------------------*/
@@ -676,9 +752,10 @@ nav {
 .store {
     width: 100%;
     min-height: 100vh;
-    background-color: #4a0d17;
+    background-color: var(--color-granate);
 }
 
+/* Organiza la tienda, los grupos de productos y la separación entre ellos. */
 .store-container {
     width: 100%;
     min-height: 100vh;
@@ -690,6 +767,7 @@ nav {
     gap: 3rem;
 }
 
+/* Organiza la tienda, los grupos de productos y la separación entre ellos. */
 .store-body {
     width: 100%;
     flex: 1;
@@ -700,6 +778,7 @@ nav {
     gap: 2rem;
 }
 
+/* Organiza la tienda, los grupos de productos y la separación entre ellos. */
 .store-group {
     flex: 1;
 
@@ -709,16 +788,19 @@ nav {
     align-content: flex-start;
 }
 
+/* Organiza la tienda, los grupos de productos y la separación entre ellos. */
 .store-divider {
     flex: 0 0 2px;
-    background-color: #d9993a;
+    background-color: var(--color-dorado);
 }
 
+/* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
 .product {
     flex: 1 0 40%;
     max-width: 48%;
 }
 
+/* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
 .product-pic {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -730,16 +812,18 @@ nav {
     align-items: center;
 }
 
+/* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
 .product-pic img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
+/* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
 .product-footer {
     padding: .5rem .8rem;
-    background-color: #d9993a;
-    color: #4a0d17;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
     border-radius: 0 0 6px 6px;
 
     display: flex;
@@ -748,11 +832,13 @@ nav {
     gap: .5rem;
 }
 
+/* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
 .product-footer span {
     font-size: .8rem;
     font-weight: 700;
 }
 
+/* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
 .product-footer img {
     width: 24px;
     height: 24px;
@@ -765,9 +851,10 @@ nav {
 .contact {
     width: 100%;
     min-height: 80vh;
-    background-color: #15171c;
+    background-color: var(--color-oscuro);
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-container {
     width: 100%;
     min-height: 80vh;
@@ -779,6 +866,7 @@ nav {
     gap: 3rem;
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-body {
     width: 100%;
 
@@ -788,6 +876,7 @@ nav {
     align-items: flex-start;
 }
 
+/* Ajusta la disposición y el aspecto de los campos del formulario. */
 form {
     flex: 2;
     display: flex;
@@ -796,34 +885,38 @@ form {
     gap: 1rem;
 }
 
+/* Ajusta la disposición y el aspecto de los campos del formulario. */
 input[type=text], input[type=email], textarea {
     width: 100%;
     padding: .7rem;
-    background-color: #15171c;
-    color: #f3e9dc;
-    border: 1px solid #5a5d66;
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+    border: 1px solid var(--color-borde-oscuro);
     border-radius: 4px;
-    font-family: Hahmlet, serif;
+    font-family: var(--fuente-principal);
     font-weight: 700;
     font-size: .95rem;
 }
 
+/* Ajusta la disposición y el aspecto de los campos del formulario. */
 textarea {
     height: 160px;
     resize: none;
 }
 
+/* Ajusta la disposición y el aspecto de los campos del formulario. */
 input[type=text]:focus, input[type=email]:focus, textarea:focus {
     outline: none;
-    border-color: #d9993a;
+    border-color: var(--color-dorado);
 }
 
+/* Da estilo al botón que envía el formulario. */
 .submit {
     width: 50%;
     padding: .7rem;
-    background-color: #d9993a;
-    color: #4a0d17;
-    font-family: Hahmlet, serif;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
+    font-family: var(--fuente-principal);
     font-weight: 700;
     text-transform: uppercase;
     border: 0;
@@ -831,39 +924,47 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
     cursor: pointer;
 }
 
+/* Personaliza el aspecto y la disposición de los elementos seleccionados por `.submit:hover`. */
 .submit:hover {
-    background-color: #f3e9dc;
+    background-color: var(--color-claro);
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-info {
     flex: 2;
     font-size: .95rem;
     line-height: 1.6;
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-info p {
     margin-bottom: 1rem;
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-info strong {
-    color: #d9993a;
+    color: var(--color-dorado);
 }
 
+/* Organiza los enlaces e iconos de redes sociales. */
 .social {
     display: flex;
     gap: .8rem;
 }
 
+/* Organiza los enlaces e iconos de redes sociales. */
 .social a {
     padding: 4px;
     border-radius: 10px;
     display: block;
 }
 
+/* Organiza los enlaces e iconos de redes sociales. */
 .social a:hover {
-    background-color: #f3e9dc;
+    background-color: var(--color-claro);
 }
 
+/* Organiza los enlaces e iconos de redes sociales. */
 .social img {
     width: 32px;
     height: 32px;
@@ -871,30 +972,34 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
     
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-info a {
-    color: #f3e9dc;
+    color: var(--color-claro);
     text-decoration: underline;
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-nav {
     flex: 1;
     padding-left: 2rem;
-    border-left: 2px solid #d9993a;
+    border-left: 2px solid var(--color-dorado);
 
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-nav a {
-    color: #d9993a;
-    font-family: Hahmlet, serif;
+    color: var(--color-dorado);
+    font-family: var(--fuente-principal);
     font-weight: 700;
     text-transform: uppercase;
 }
 
+/* Organiza la sección de contacto, el formulario y los datos para contactar. */
 .contact-nav a:hover {
-    color: #f3e9dc;
+    color: var(--color-claro);
 }
 
 /*----------------------------------------- FOOTER -------------------------------------*/
@@ -902,10 +1007,11 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
 footer {
     width: 100%;
     padding: 1.2rem 5%;
-    background-color: #4a0d17;
-    border-top: 1px solid #2c2f36;
+    background-color: var(--color-granate);
+    border-top: 1px solid var(--color-tarjeta-oscura);
 }
 
+/* Organiza los elementos que aparecen en el pie de página. */
 .footer-container {
     width: 100%;
 
@@ -916,6 +1022,7 @@ footer {
     gap: 1rem;
 }
 
+/* Organiza los elementos que aparecen en el pie de página. */
 .footer-logo {
     flex: 0 0 60px;
     height: 60px;
@@ -926,12 +1033,14 @@ footer {
     background-position: center center;
 }
 
+/* Da estilo al pie de página y distribuye el logotipo, el texto y los iconos. */
 footer p {
     flex: 1;
     text-align: center;
     font-size: .7rem;
 }
 
+/* Da estilo al pie de página y distribuye el logotipo, el texto y los iconos. */
 footer .social img {
     width: 32px;
     height: 32px;
@@ -940,10 +1049,12 @@ footer .social img {
 /*------------------------------------------------ MediaQueries --------------------------*/
 
 @media screen and (max-width: 1100px) {
+    /* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
     #menu {
         gap: .9rem;
     }
 
+    /* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
     #menu li a {
         font-size: .8rem;
     }
@@ -957,6 +1068,7 @@ footer .social img {
         --header-h: 64px;
     }
 
+    /* Define el aspecto general de la página: ancho, letra y colores de fondo y texto. */
     html {
         scroll-padding-top: var(--header-h); /* la cabecera fija no tapa el título al saltar a una sección */
         -webkit-text-size-adjust: 100%;
@@ -968,6 +1080,7 @@ footer .social img {
     .albums, .albums-container,
     .tour, .tour-container,
     .store, .store-container,
+    /* Organiza la sección de contacto, el formulario y los datos para contactar. */
     .contact, .contact-container {
         min-height: auto;
     }
@@ -978,15 +1091,18 @@ footer .social img {
         min-height: 0;
     }
 
+    /* Organiza los elementos de navegación en una fila y los alinea verticalmente. */
     nav {
         padding: 0 1rem;
         justify-content: space-between;
     }
 
+    /* Reserva el espacio de la zona donde aparece el logotipo. */
     .logo {
         padding: .75rem 0;
     }
 
+    /* Muestra el logotipo como imagen de fondo y ajusta su tamaño sin deformarlo. */
     .img-logo {
         max-width: 240px;
     }
@@ -1007,7 +1123,7 @@ footer .social img {
         justify-content: flex-start;
         gap: 0;
 
-        background-color: #4a0d17;
+        background-color: var(--color-granate);
         border-top: 1px solid rgba(217, 153, 58, .35);
         box-shadow: 0 14px 24px rgba(0, 0, 0, .5);
 
@@ -1017,12 +1133,14 @@ footer .social img {
         transition: opacity .25s, transform .25s, visibility .25s;
     }
 
+    /* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
     #menu:target {
         visibility: visible;
         opacity: 1;
         transform: none;
     }
 
+    /* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
     #menu li a {
         display: block;
         padding: 1rem 1.5rem;
@@ -1030,6 +1148,7 @@ footer .social img {
         border-bottom: 1px solid rgba(243, 233, 220, .12);
     }
 
+    /* Controla la posición, separación y apariencia de los enlaces del menú. En móvil también controla el panel desplegable. */
     #menu li:last-child a {
         border-bottom: 0;
     }
@@ -1042,15 +1161,17 @@ footer .social img {
         height: 44px;
     }
 
+    /* Da forma a los botones del menú móvil: las tres líneas para abrirlo y la X para cerrarlo. */
     .burger-open {
         display: block;
         background:
-            linear-gradient(#d9993a, #d9993a) center 28% / 26px 3px no-repeat,
-            linear-gradient(#d9993a, #d9993a) center 50% / 26px 3px no-repeat,
-            linear-gradient(#d9993a, #d9993a) center 72% / 26px 3px no-repeat;
+            linear-gradient(var(--color-dorado), var(--color-dorado)) center 28% / 26px 3px no-repeat,
+            linear-gradient(var(--color-dorado), var(--color-dorado)) center 50% / 26px 3px no-repeat,
+            linear-gradient(var(--color-dorado), var(--color-dorado)) center 72% / 26px 3px no-repeat;
     }
 
     .burger-close::before,
+    /* Da forma a los botones del menú móvil: las tres líneas para abrirlo y la X para cerrarlo. */
     .burger-close::after {
         content: "";
         position: absolute;
@@ -1059,14 +1180,16 @@ footer .social img {
         top: 50%;
         height: 3px;
         margin-top: -1.5px;
-        background-color: #d9993a;
+        background-color: var(--color-dorado);
         border-radius: 2px;
     }
 
+    /* Da forma a los botones del menú móvil: las tres líneas para abrirlo y la X para cerrarlo. */
     .burger-close::before {
         transform: rotate(45deg);
     }
 
+    /* Da forma a los botones del menú móvil: las tres líneas para abrirlo y la X para cerrarlo. */
     .burger-close::after {
         transform: rotate(-45deg);
     }
@@ -1094,10 +1217,12 @@ footer .social img {
         min-height: 420px;
     }
 
+    /* Ajusta el tamaño de las distintas líneas del título principal. */
     .line-1, .line-3 {
         font-size: 3rem;
     }
 
+    /* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
     .hero-container {
         justify-content: center;
     }
@@ -1123,11 +1248,13 @@ footer .social img {
     .bio-left img,
     .bio-left-text,
     .bio-right p,
+    /* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
     .bio-timeline {
         width: 100%;
         max-width: 680px;
     }
 
+    /* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
     .bio-timeline {
         min-height: 320px;
     }
@@ -1139,64 +1266,81 @@ footer .social img {
         max-width: 360px;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured-card {
         flex: none;
         width: 100%;
         max-width: 480px;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured-card img {
         display: none;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured-info {
         flex: none;
         padding-top: 0;
     }
 
+    /* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
     .album, .tour-list, form, .contact-info, .contact-nav {
         width: 100%;
         flex: none;
     }
 
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
     .carousel {
-        --w: 80vw;
         padding: 0;
     }
 
-    .carousel .arrow {
-        font-size: 2.5rem;
-        top: calc(var(--w) * 0.2829 + 0px);
+    /* Personaliza el aspecto y la disposición de los elementos seleccionados por `.viewport, .slider .video`. */
+    .viewport, .slider .video {
+        width: 80vw;
     }
 
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
+    .carousel .arrow {
+        font-size: 2.5rem;
+        top: 22.6vw;
+    }
+
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
     .carousel .prev {
         left: -2vw;
     }
 
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
     .carousel .next {
         right: -2vw;
     }
 
+    /* Organiza la tienda, los grupos de productos y la separación entre ellos. */
     .store-body {
         flex-flow: column nowrap;
     }
 
+    /* Organiza la tienda, los grupos de productos y la separación entre ellos. */
     .store-divider {
         flex: 0 0 2px;
         width: 100%;
     }
 
+    /* Organiza la sección de contacto, el formulario y los datos para contactar. */
     .contact-nav {
         padding-left: 0;
         border-left: 0;
-        border-top: 2px solid #d9993a;
+        border-top: 2px solid var(--color-dorado);
         padding-top: 1rem;
     }
 
+    /* Da estilo al botón que envía el formulario. */
     .submit {
         width: 100%;
     }
 
+    /* Organiza los elementos que aparecen en el pie de página. */
     .footer-container {
         flex-flow: column nowrap;
     }
@@ -1205,6 +1349,7 @@ footer .social img {
 /* ===================== MÓVIL (hasta 600px) ===================== */
 @media screen and (max-width: 600px) {
 
+    /* Da tamaño, color y separación entre letras a los títulos de sección. */
     h2 {
         font-size: 1.8rem;
         letter-spacing: 1px;
@@ -1215,14 +1360,17 @@ footer .social img {
         padding: 0 5%;
     }
 
+    /* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
     .hero-legend {
         gap: 1.5rem;
     }
 
+    /* Ajusta el tamaño de las distintas líneas del título principal. */
     .line-1, .line-3 {
         font-size: 2.8rem;
     }
 
+    /* Ajusta el tamaño de las distintas líneas del título principal. */
     .line-2 {
         font-size: 1.5rem;
     }
@@ -1235,6 +1383,7 @@ footer .social img {
         gap: .8rem;
     }
 
+    /* Define la apariencia común de los botones y sus variantes. */
     .btn {
         padding: .9rem 1.2rem;
         text-align: center;
@@ -1246,14 +1395,17 @@ footer .social img {
         gap: 1.8rem;
     }
 
+    /* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
     .bio-right h2 {
         font-size: 2rem;
     }
 
+    /* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
     .bio-left-text {
         gap: 1.2rem;
     }
 
+    /* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
     .bio-left-text p, .bio-right p {
         font-size: .95rem;
         line-height: 1.75;
@@ -1272,20 +1424,24 @@ footer .social img {
         gap: 2rem;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured {
         gap: 1.5rem;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured-info {
         width: 100%;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured-info h3 {
         font-size: 2rem;
         text-align: center;
         margin-bottom: 1rem;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured-info ol {
         width: fit-content;
         margin: 0 auto;
@@ -1294,19 +1450,23 @@ footer .social img {
         line-height: 2;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured-card, .album {
         padding: 1rem;
     }
 
+    /* Organiza la sección de álbumes y la lista de discos secundarios. */
     .albums-list {
         margin-top: 0;
         gap: 1rem;
     }
 
+    /* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
     .album-main ol {
         font-size: .9rem;
     }
 
+    /* Define la apariencia común de los botones y sus variantes. */
     .btn-play {
         padding: .7rem 2rem;
     }
@@ -1318,16 +1478,23 @@ footer .social img {
         padding: 2.5rem 6%;
     }
 
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
     .carousel {
-        --w: 88vw;
         gap: 1.2rem;
         padding: 0 0 .5rem;
     }
 
+    /* Personaliza el aspecto y la disposición de los elementos seleccionados por `.viewport, .slider .video`. */
+    .viewport, .slider .video {
+        width: 88vw;
+    }
+
+    /* Coloca los vídeos en una fila y permite desplazarse suavemente entre ellos. */
     .slider .video iframe {
         width: 92%;
     }
 
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
     .carousel .arrow {
         top: auto;
         bottom: -7px; /* centradas con la fila de puntos */
@@ -1339,14 +1506,17 @@ footer .social img {
         transform: none;
     }
 
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
     .carousel .arrow:hover {
         transform: none;
     }
 
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
     .carousel .prev {
         left: 0;
     }
 
+    /* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
     .carousel .next {
         right: 0;
     }
@@ -1357,45 +1527,55 @@ footer .social img {
         gap: 2rem;
     }
 
+    /* Organiza la sección de próximos eventos y su lista. */
     .tour-body {
         gap: .8rem;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event {
         padding: .8rem;
         gap: .8rem;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event::after {
         width: 28px;
         height: 28px;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event-date {
         flex: 0 0 56px;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event-date span {
         font-size: 1.1rem;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event-date strong {
         font-size: 2rem;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event-info h3 {
         font-size: .85rem;
         line-height: 1.35;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event-info p {
         font-size: .78rem;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event-buttons {
         flex-wrap: wrap;
     }
 
+    /* Define la apariencia común de los botones y sus variantes. */
     .btn-small {
         padding: .55rem .9rem;
         font-size: .75rem;
@@ -1408,10 +1588,12 @@ footer .social img {
         gap: 2rem;
     }
 
+    /* Organiza la tienda, los grupos de productos y la separación entre ellos. */
     .store-body {
         gap: 1.5rem;
     }
 
+    /* Organiza la tienda, los grupos de productos y la separación entre ellos. */
     .store-group {
         gap: 1.2rem .8rem;
     }
@@ -1423,15 +1605,18 @@ footer .social img {
         flex-flow: column nowrap;
     }
 
+    /* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
     .product-footer {
         flex: 1;
     }
 
+    /* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
     .product-footer span {
         font-size: .75rem;
         line-height: 1.3;
     }
 
+    /* Da forma a las tarjetas de producto, la imagen y la franja con nombre o precio. */
     .product-footer img {
         flex: 0 0 32px;
         width: 32px;
@@ -1445,6 +1630,7 @@ footer .social img {
         gap: 2rem;
     }
 
+    /* Organiza la sección de contacto, el formulario y los datos para contactar. */
     .contact-body {
         gap: 2rem;
     }
@@ -1455,23 +1641,28 @@ footer .social img {
         font-size: 1rem;
     }
 
+    /* Ajusta la disposición y el aspecto de los campos del formulario. */
     textarea {
         height: 140px;
     }
 
+    /* Organiza la sección de contacto, el formulario y los datos para contactar. */
     .contact-info {
         font-size: .9rem;
     }
 
+    /* Organiza la sección de contacto, el formulario y los datos para contactar. */
     .contact-info a {
         overflow-wrap: anywhere;
     }
 
+    /* Organiza la sección de contacto, el formulario y los datos para contactar. */
     .contact-nav {
         flex-flow: row wrap;
         gap: .4rem 1.5rem;
     }
 
+    /* Organiza la sección de contacto, el formulario y los datos para contactar. */
     .contact-nav a {
         display: inline-block;
         padding: .4rem 0;
@@ -1482,6 +1673,7 @@ footer .social img {
         padding: 1.5rem 6%;
     }
 
+    /* Da estilo al pie de página y distribuye el logotipo, el texto y los iconos. */
     footer p {
         font-size: .75rem;
         line-height: 1.6;
@@ -1491,34 +1683,42 @@ footer .social img {
 /* ===================== MÓVIL PEQUEÑO (hasta 380px) ===================== */
 @media screen and (max-width: 380px) {
 
+    /* Da tamaño, color y separación entre letras a los títulos de sección. */
     h2 {
         font-size: 1.6rem;
     }
 
+    /* Muestra el logotipo como imagen de fondo y ajusta su tamaño sin deformarlo. */
     .img-logo {
         max-width: 190px;
     }
 
+    /* Ajusta el tamaño de las distintas líneas del título principal. */
     .line-1, .line-3 {
         font-size: 2.4rem;
     }
 
+    /* Ajusta el tamaño de las distintas líneas del título principal. */
     .line-2 {
         font-size: 1.3rem;
     }
 
+    /* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
     .bio-right h2 {
         font-size: 1.7rem;
     }
 
+    /* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
     .featured-info h3 {
         font-size: 1.7rem;
     }
 
+    /* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
     .album-main {
         gap: .8rem;
     }
 
+    /* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
     .album-main img {
         flex: 0 0 76px;
         width: 76px;
@@ -1530,6 +1730,7 @@ footer .social img {
         display: none;
     }
 
+    /* Da forma a una tarjeta de evento con fecha, información y decoración. */
     .event-date {
         flex-basis: 48px;
     }
