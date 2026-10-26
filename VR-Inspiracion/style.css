@@ -407,7 +407,6 @@ nav {
     font-size: .8rem;
     font-weight: 700;
     text-transform: uppercase;
-    border: 2px solid #f3e9dc;
     border-radius: 3px;
 }
 
@@ -516,11 +515,7 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        background:
-            radial-gradient(circle at 15% 20%, rgba(0, 0, 0, .35), transparent 35%),
-            radial-gradient(circle at 85% 80%, rgba(0, 0, 0, .35), transparent 35%),
-            linear-gradient(135deg, #a8921c, #c9ab2e 50%, #8d7714);
+        background: #d9993a;
 
         iframe {
             width: 82%;
