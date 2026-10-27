@@ -62,6 +62,7 @@ img {
 
 /*----------------------------------------- nav -------------------------------------*/
 
+/*Franja que contiene logo y menu*/
 header {
     width: 100%;
     height: 10vh;
@@ -85,7 +86,7 @@ nav {
     justify-content: center;
 }
 
-/* espaciado del logo */
+/* espacio del logo */
 .logo {
     flex: 1;
     height: 100%;
@@ -95,7 +96,7 @@ nav {
 /* ajustar logo */
 .img-logo {
     width: 100%;
-    max-width: 330px;
+    max-width: 330px; /*nunca pasa de 330px*/
     height: 100%;
 
     background-image: url(img/Logo_Nombre.png);
@@ -104,7 +105,7 @@ nav {
     background-position: left center;
 }
 
-/* posición, separación y apariencia de enlaces del menú. también menu desplegable */
+/* posición, separación y apariencia de enlaces del menú */
 #menu {
     flex: 2;
     height: 100%;
@@ -114,7 +115,7 @@ nav {
     align-items: center;
 }
 
-/* posición, separación y apariencia de los enlaces del menú. también anel desplegable. */
+/* apariencia de cada enlace */
 #menu li a {
     font-family: var(--fuente-principal);
     font-weight: 700;
@@ -123,10 +124,12 @@ nav {
     font-size: .95rem;
 }
 
+/*al pasar raton cambia*/
 #menu li a:hover {
     color: var(--color-claro);
 }
 
+/*El menu hamburguesa solo aparecerá en tamaños de movil*/
 .burger,
 /* capa oscura para distinguir cuando se despliega*/
 .menu-backdrop {
@@ -134,14 +137,14 @@ nav {
 }
 
 /*----------------------------------------- botones -------------------------------------*/
-
+/*estilos generales de los botones de la página inicial*/
 .btn {
     display: inline-block;
     padding: .8rem 1.6rem;
     font-family: var(--fuente-principal);
     font-weight: 700;
     font-size: .9rem;
-    text-transform: uppercase;
+    text-transform: uppercase;  
     border: 2px solid var(--color-dorado);
     border-radius: 4px;
 }
@@ -175,7 +178,7 @@ nav {
 
 .hero {
     width: 100%;
-    height: 90vh;
+    height: 90vh; /*el resto lo ocupa la cabecera*/
 
     background-image: url(img/vrbackground.png);
     background-size: cover;
@@ -190,11 +193,11 @@ nav {
     padding: 0 8%;
 
     display: flex;
-    justify-content: flex-start; /*agrupan al inicio de la línea*/
+    justify-content: flex-start; /*agrupan el contenido al principio*/
     align-items: center;
 }
 
-/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
+/* apilar titulo y botones */
 .hero-legend {
     display: flex;
     flex-flow: column nowrap;
@@ -202,35 +205,35 @@ nav {
     gap: 2rem;
 }
 
-/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
+/* estilo del titulo principal */
 .hero-legend h1 {
     text-align: center;
     color: var(--color-dorado);
-    line-height: 1.1;
+    line-height: 1.1; /*altura de cada linea de texto*/
 }
 
-/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
+/* cada span ocupara su propia línea */
 .hero-legend h1 span {
     display: block;
 }
 
-/* Ajusta el tamaño de las distintas líneas del título principal. */
+/* tamaño de titulo */
 .line-1, .line-3 {
     font-size: 4.2rem;
 }
 
-/* Ajusta el tamaño de las distintas líneas del título principal. */
+/* segundo tamaño de titulo */
 .line-2 {
     font-size: 2.2rem;
 }
 
-/* Da tamaño y posición a la sección inicial de la web, donde aparece el mensaje principal. */
+/* colocación de los botones */
 .hero-buttons {
     display: flex;
     gap: 1rem;
 }
 
-/*----------------------------------------- BIOGRAPHY -------------------------------------*/
+/*----------------------------- BIOGRAPHY -------------------------*/
 
 .bio {
     width: 100%;
@@ -238,7 +241,7 @@ nav {
     background-color: var(--color-granate);
 }
 
-/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
+/* colocación del contenido en 2 columnas */
 .bio-container {
     width: 100%;
     min-height: 100vh;
@@ -251,7 +254,7 @@ nav {
     justify-content: center;
 }
 
-/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
+/* columna izquierda */
 .bio-left {
     flex: 1;
 
@@ -260,20 +263,18 @@ nav {
     gap: 3rem;
 }
 
-/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-left img {
     width: 100%;
     display: block;
 }
 
-/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
 .bio-left-text {
     display: flex;
     flex-flow: column nowrap;
     gap: 1.5rem;
 }
 
-/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
+/* columna derecha */
 .bio-right {
     flex: 1;
 
@@ -283,19 +284,18 @@ nav {
     gap: 2rem;
 }
 
-/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
+/*titulo biografia*/
 .bio-right h2 {
     font-size: 2.6rem;
 }
-
-/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
+/*estilo de párrafos*/
 .bio-left-text p, .bio-right p {
     font-size: 1rem;
     line-height: 1.9;
     font-weight: 700;
 }
 
-/* Organiza el contenido de la sección de biografía, sus textos, imágenes y línea temporal. */
+/*imagen de cronología*/
 .bio-timeline {
     width: 100%;
     height: 55vh;
@@ -307,7 +307,7 @@ nav {
     background-position: center center;
 }
 
-/*----------------------------------------- ALBUMS -------------------------------------*/
+/*--------------------------- ALBUMS -------------------*/
 
 .albums {
     width: 100%;
@@ -315,7 +315,7 @@ nav {
     background-color: var(--color-oscuro);
 }
 
-/* Organiza la sección de álbumes y la lista de discos secundarios. */
+/* album destacado y lista de albumes secundarios */
 .albums-container {
     width: 100%;
     min-height: 100vh;
@@ -328,6 +328,7 @@ nav {
 }
 
 /* ---- Álbum Principal ---- */
+/*Contiene portada, canciones y reproductor*/
 .featured {
     width: 100%;
 
@@ -338,36 +339,36 @@ nav {
     gap: 3rem;
 }
 
-/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
+/* portada */
 .featured-cover {
-    flex: 0 0 28%;
+    flex: 0 0 28%;  /*ni crece ni encoje, mide 28%*/
     width: 28%;
     display: block;
 }
 
-/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
+/* título y lista de canciones */
 .featured-info {
     flex: 1;
     align-self: flex-start;
     padding-top: 1.5rem;
+
+    /* estilo titulo*/
+    h3 {
+        font-size: 2.6rem;
+        color: var(--color-claro);
+        margin-bottom: 1.5rem;
+    }
+
+/* lista de canciones */
+    ol {
+        list-style-type: decimal; /*mostrar numeros de lista*/
+        padding-left: 2.2rem;
+        font-size: 1.3rem;
+        line-height: 2.2;
+    }
 }
 
-/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
-.featured-info h3 {
-    font-size: 2.6rem;
-    color: var(--color-claro);
-    margin-bottom: 1.5rem;
-}
-
-/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
-.featured-info ol {
-    list-style-type: decimal;
-    padding-left: 2.2rem;
-    font-size: 1.3rem;
-    line-height: 2.2;
-}
-
-/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
+/*tarjeta con imagen y reproductor*/
 .featured-card {
     flex: 0 0 24%;
     padding: 1.2rem;
@@ -378,20 +379,19 @@ nav {
     flex-flow: column nowrap;
     align-items: center;
     gap: 1.2rem;
-}
 
-/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
-.featured-card img {
-    width: 75%;
-    display: block;
-}
+    img {
+        width: 75%;
+        display: block;
+    }
 
-/* Organiza el álbum destacado: portada, información y tarjeta del reproductor. */
-.featured-card iframe {
-    width: 100%;
-    height: 80px;
-    border: 0;
-    border-radius: 12px;
+/* ajuste del reproductor */
+    iframe {
+        width: 100%;
+        height: 80px;
+        border: 0;
+        border-radius: 12px;
+    }
 }
 
 /* ---- Albums Secundarios ---- */
@@ -405,7 +405,7 @@ nav {
     gap: 2.5rem;
 }
 
-/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
+/* estilo de los albums secundarios */
 .album {
     flex: 1;
     padding: 1.2rem;
@@ -414,40 +414,40 @@ nav {
     flex-flow: column nowrap;
     align-items: center;
     gap: 1.2rem;
+
+    h3 {
+        font-size: 1.15rem;
+        color: var(--color-claro);
+    }
 }
 
-/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
-.album h3 {
-    font-size: 1.15rem;
-    color: var(--color-claro);
-}
-
-/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
+/* colocacion portada y lista */
 .album-main {
     display: flex;
     flex-flow: row nowrap;
     gap: 1.2rem;
     align-items: center;
+
+    /* portada */
+    img {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* lista numerada*/
+    ol {
+        list-style-type: decimal; /*mostrar numeros de lista*/
+        padding-left: 1.2rem;
+        font-size: .8rem;
+        line-height: 2;
+    }
 }
 
-/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
-.album-main img {
-    flex: 0 0 90px;
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 8px;
-}
 
-/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
-.album-main ol {
-    list-style-type: decimal;
-    padding-left: 1.2rem;
-    font-size: .8rem;
-    line-height: 2;
-}
-
-/* Define la apariencia común de los botones y sus variantes. */
+/* estilo de los botones */
 .btn-play {
     padding: .5rem 1.6rem;
     background-color: var(--color-dorado);
@@ -458,12 +458,12 @@ nav {
     border-radius: 3px;
 }
 
-/* Define la apariencia común de los botones y sus variantes. */
+/* al pasar el raton */
 .btn-play:hover {
     background-color: var(--color-claro);
 }
 
-/* Controla la disposición y el tamaño de cada álbum, su portada y su lista de canciones. */
+/* reproductor de albums secundarios */
 .album iframe {
     width: 70%;
     height: 80px;
@@ -478,7 +478,7 @@ nav {
     background-color: var(--color-granate);
 }
 
-/* Da espacio y fondo a la sección donde se muestran los vídeos. */
+/* centrado del carrusel */
 .videos-container {
     width: 100%;
     padding: 3.5rem 5%;
@@ -487,116 +487,112 @@ nav {
     justify-content: center;
 }
 
-/* El carrusel muestra un vídeo cada vez. En pantallas grandes no supera 760px. */
 .carousel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    position: relative; /* referencia de las flechas*/
     gap: 1.5rem;
     padding: 0 8rem;
-}
 
-/* Flechas para pasar al vídeo anterior o al siguiente. */
-.carousel .arrow {
-    color: var(--color-dorado);
-    position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
-    font-size: 4.5rem;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 9999;
-    user-select: none;
-    transition: transform .3s;
-    display: none; /* Solo se muestra la flecha que corresponde al vídeo actual. */
-}
+    .arrow {
+        color: var(--color-dorado);
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        font-size: 4.5rem;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 9999; /*por ecima de todo*/
+        user-select: none; /*evita seleccionar el texto de la flecha*/
+        transition: transform .3s;
+        display: none; /* Solo se muestra la flecha que corresponde al vídeo actual */
+    }
 
-/* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
-.carousel .arrow:hover {
-    transform: translateY(-50%) scale(1.15);
-}
+    /*crecer flecha al pasar raton*/
+    .arrow:hover {
+        transform: translateY(-50%) scale(1.15);
+    }
 
-.carousel .prev { left: 1rem; }
-.carousel .next { right: 1rem; }
+    /*flechas*/
+    .prev { left: 1rem; }
+    .next { right: 1rem; }
 
-/* Los puntos de abajo indican qué vídeo está seleccionado. */
-.carousel .dots {
-    display: flex;
-    gap: 14px;
-}
+    /*puntos del carrusel*/
+    .dots {
+        display: flex;
+        gap: 14px;
 
-/* Organiza el carrusel de vídeos, sus flechas y los puntos de navegación. */
-.carousel .dots label {
-    width: 18px;
-    height: 18px;
-    background-color: var(--color-claro);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background .3s, transform .3s;
-}
+        /*estilo de puntos*/
+        label {
+            width: 18px;
+            height: 18px;
+            background-color: var(--color-claro);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background .3s, transform .3s;
+        }
+    }
 
-/* Ocultamos los botones de selección; las flechas y los puntos los sustituyen. */
-.carousel input {
+    /*ocultar botones reales*/
+    input {
     display: none;
+    }
 }
 
-/* Esta ventana recorta los vídeos que quedan fuera del que se está mostrando. */
+/* ventana que muestra un video */
 .viewport {
     width: min(760px, 62vw);
     overflow: hidden;
 }
 
-/* Los vídeos forman una cinta horizontal que se desplaza al elegir otro punto. */
+/* cinta con los 3 videos */
 .slider {
     display: flex;
     width: max-content;
     transition: transform .5s ease;
-}
 
-/* Coloca los vídeos en una fila y permite desplazarse suavemente entre ellos. */
-.slider .video {
-    width: min(760px, 62vw);
-    aspect-ratio: 760 / 430;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-dorado);
-}
+    /*tamaño ventana*/
+    .video {
+        width: min(760px, 62vw);
+        aspect-ratio: 760 / 430;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--color-dorado);
 
-/* Coloca los vídeos en una fila y permite desplazarse suavemente entre ellos. */
-.slider .video iframe {
-    width: 82%;
-    aspect-ratio: 16 / 9;
-    border: 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .7);
+        /*tamaño video*/
+        iframe {
+            width: 88%;
+            height: 82%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+        }
+    }
 }
 
 /*------------ Controlar el Slider ---------------*/
 
-/* Cada posición desplaza la cinta(3 vídeos) */
+/* Cada posición desplaza la cinta - cada video mide un 33,33%*/
 #s1:checked ~ .viewport .slider {transform: translateX(0);}
 #s2:checked ~ .viewport .slider {transform: translateX(-33.3333%);}
 #s3:checked ~ .viewport .slider {transform: translateX(-66.6666%);}
 
-/* Punto activo */
+/* Punto activo - se pone dorado y crece un poco*/
 #s1:checked ~ .dots label[for="s1"],
 #s2:checked ~ .dots label[for="s2"],
-/* Cuando se selecciona un vídeo, esta regla mueve el carrusel o marca el punto correspondiente. */
 #s3:checked ~ .dots label[for="s3"] {
     background-color: var(--color-dorado);
     transform: scale(1.1);
 }
 
-/* Primera posición: solo flecha siguiente */
+/* Primera posición: solo flecha derecha */
 #s1:checked ~ .n1 {display: block}
-
-/* Posición del medio: anterior (p2) y siguiente (n2) */
+/* Posición del medio: izquierda (p2) y derecha (n2) */
 #s2:checked ~ .p2,
 #s2:checked ~ .n2 {display: block}
-
-/* Última posición: solo flecha anterior */
+/* Última posición: solo flecha izquierda */
 #s3:checked ~ .p3 {display: block}
 
 /*----------------------------------------- ON TOUR -------------------------------------*/
@@ -734,7 +730,7 @@ nav {
 }
 
 /*----------------------------------------- STORE -------------------------------------*/
-
+/*ACORDARSE DE LA LINEA DEL CENTRO QUE NO ESTA CENTRADA*/
 .store {
     width: 100%;
     min-height: 100vh;
