@@ -1,0 +1,1580 @@
+/* Tipografía usada de Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@700&display=swap');
+
+/*--- VARIABLES ---*/
+:root {
+    --color-granate: #4a0d17;
+    --color-oscuro: #15171c;
+    --color-dorado: #d9993a;
+    --color-claro: #f3e9dc;
+    --color-granate-claro: #8a3a40;
+    --color-borde-oscuro: #5a5d66;
+    --color-tarjeta-oscura: #2c2f36;
+    --fuente-principal: 'Hahmlet', serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Desplazamiento sueva al hacer scroll*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* Aspecto general de la página*/
+body, html {
+    width: 100%;
+    font-weight: 700;
+    font-family: var(--fuente-principal);
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+}
+
+/* Estilo base a títulos principales */
+h1, h2, h3 {
+    font-family: var(--fuente-principal);
+    text-transform: uppercase;
+}
+
+/* Da tamaño, color y separación entre letras a los títulos de sección. */
+h2 {
+    font-size: 2.2rem;
+    color: var(--color-dorado);
+}
+
+/* Quitar estilos al las listas */
+ul, ol {
+    list-style-type: none;
+}
+
+/* Quita el subrayado */
+a {
+    text-decoration: none;
+}
+
+/* Para que no sobresalgan */
+img {
+    max-width: 100%;
+}
+
+/*----------------------------------------- nav -------------------------------------*/
+
+/*Franja que contiene logo y menu*/
+header {
+    width: 100%;
+    height: 10vh;
+    min-height: 70px;
+    background-color: var(--color-granate);
+
+    position: sticky; /*Cabecera fija arriba de la página*/
+    top: 0;
+    z-index: 9999; /*Obliga que la cabecera se superponga*/
+}
+
+/* Organización del nav */
+nav {
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* espacio del logo */
+.logo {
+    flex: 1;
+    height: 100%;
+    padding: .8rem 0;
+}
+
+/* ajustar logo */
+.img-logo {
+    width: 100%;
+    max-width: 330px; /*nunca pasa de 330px*/
+    height: 100%;
+
+    background-image: url(img/Logo_Nombre.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/* posición, separación y apariencia de enlaces del menú */
+#menu {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* apariencia de cada enlace */
+#menu li a {
+    font-family: var(--fuente-principal);
+    font-weight: 700;
+    color: var(--color-dorado);
+    text-transform: uppercase;
+    font-size: .95rem;
+}
+
+/*al pasar raton cambia*/
+#menu li a:hover {
+    color: var(--color-claro);
+}
+
+/*El menu hamburguesa solo aparecerá en tamaños de movil*/
+.burger,
+/* capa oscura para distinguir cuando se despliega*/
+.menu-backdrop {
+    display: none;
+}
+
+/*----------------------------------------- botones -------------------------------------*/
+/*estilos generales de los botones de la página inicial*/
+.btn {
+    display: inline-block;
+    padding: .8rem 1.6rem;
+    font-family: var(--fuente-principal);
+    font-weight: 700;
+    font-size: .9rem;
+    text-transform: uppercase;  
+    border: 2px solid var(--color-dorado);
+    border-radius: 4px;
+}
+
+/* Botón principal*/
+.btn-fill {
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
+}
+
+/* efecto al pasar el ratón*/
+.btn-fill:hover {
+    background-color: transparent;
+    color: var(--color-dorado);
+}
+
+/* Botón secundario*/
+.btn-line {
+    background-color: var(--color-granate);
+    color: var(--color-dorado);
+    border-color: var(--color-granate-claro);
+}
+
+/* efecto al pasar el raton */
+.btn-line:hover {
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
+}
+
+/*----------------------------------------- HERO -------------------------------------*/
+
+.hero {
+    width: 100%;
+    height: 90vh; /*el resto lo ocupa la cabecera*/
+
+    background-image: url(img/vrbackground.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Da tamaño y posición a la sección */
+.hero-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 8%;
+
+    display: flex;
+    justify-content: flex-start; /*agrupan el contenido al principio*/
+    align-items: center;
+}
+
+/* apilar titulo y botones */
+.hero-legend {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+
+    /* estilo del titulo principal */
+    h1 {
+        text-align: center;
+        color: var(--color-dorado);
+        line-height: 1.1; /*altura de cada linea de texto*/
+    }
+}
+
+
+/* cada span ocupara su propia línea */
+.hero-legend h1 span {
+    display: block;
+}
+
+/* tamaño de titulo */
+.line-1, .line-3 {
+    font-size: 4.2rem;
+}
+
+/* segundo tamaño de titulo */
+.line-2 {
+    font-size: 2.2rem;
+}
+
+/* colocación de los botones */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/*----------------------------- BIOGRAPHY -------------------------*/
+
+.bio {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-granate);
+}
+
+/* colocación del contenido en 2 columnas */
+.bio-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 5%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* columna izquierda */
+.bio-left {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3rem;
+
+    img {
+        width: 100%;
+        display: block;
+    }
+}
+
+.bio-left-text {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+}
+
+/* columna derecha */
+.bio-right {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+
+    /*titulo biografia*/
+    .bio-right h2 {
+        font-size: 2.6rem;
+    }
+}
+
+/*estilo de párrafos*/
+.bio-left-text p, .bio-right p {
+    font-size: 1rem;
+    line-height: 1.9;
+    font-weight: 700;
+}
+
+/*imagen de cronología*/
+.bio-timeline {
+    width: 100%;
+    height: 55vh;
+    min-height: 380px;
+
+    background-image: url(img/lineaTemporal.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*--------------------------- ALBUMS -------------------*/
+
+.albums {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-oscuro);
+}
+
+/* album destacado y lista de albumes secundarios */
+.albums-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 5%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* ---- Álbum Principal ---- */
+/*Contiene portada, canciones y reproductor*/
+.featured {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+/* portada */
+.featured-cover {
+    flex: 0 0 28%;  /*ni crece ni encoje, mide 28%*/
+    width: 28%;
+    display: block;
+}
+
+/* título y lista de canciones */
+.featured-info {
+    flex: 1;
+    align-self: flex-start;
+    padding-top: 1.5rem;
+
+    /* estilo titulo*/
+    h3 {
+        font-size: 2.6rem;
+        color: var(--color-claro);
+        margin-bottom: 1.5rem;
+    }
+
+/* lista de canciones */
+    ol {
+        list-style-type: decimal; /*mostrar numeros de lista*/
+        padding-left: 2.2rem;
+        font-size: 1.3rem;
+        line-height: 2.2;
+    }
+}
+
+/*tarjeta con imagen y reproductor*/
+.featured-card {
+    flex: 0 0 24%;
+    padding: 1.2rem;
+    background-color: var(--color-granate);
+    border-radius: 12px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1.2rem;
+
+    img {
+        width: 75%;
+        display: block;
+    }
+
+/* ajuste del reproductor */
+    iframe {
+        width: 100%;
+        height: 80px;
+        border: 0;
+        border-radius: 12px;
+    }
+}
+
+/* ---- Albums Secundarios ---- */
+.albums-list {
+    width: 100%;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+/* estilo de los albums secundarios */
+.album {
+    flex: 1;
+    padding: 1.2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1.2rem;
+
+    h3 {
+        font-size: 1.15rem;
+        color: var(--color-claro);
+    }
+}
+
+/* colocacion portada y lista */
+.album-main {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.2rem;
+    align-items: center;
+
+    /* portada */
+    img {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* lista numerada*/
+    ol {
+        list-style-type: decimal; /*mostrar numeros de lista*/
+        padding-left: 1.2rem;
+        font-size: .8rem;
+        line-height: 2;
+    }
+}
+
+
+/* estilo de los botones */
+.btn-play {
+    padding: .5rem 1.6rem;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+/* al pasar el raton */
+.btn-play:hover {
+    background-color: var(--color-claro);
+}
+
+/* reproductor de albums secundarios */
+.album iframe {
+    width: 70%;
+    height: 80px;
+    border: 0;
+    border-radius: 12px;
+}
+
+/*----------------------------------------- VIDEOS (carrusel) -------------------------------------*/
+
+.videos {
+    width: 100%;
+    background-color: var(--color-granate);
+}
+
+/* centrado del carrusel */
+.videos-container {
+    width: 100%;
+    padding: 3.5rem 5%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* referencia de las flechas*/
+    gap: 1.5rem;
+    padding: 0 8rem;
+
+    .arrow {
+        color: var(--color-dorado);
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        font-size: 4.5rem;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 90; /*por ecima de todo*/
+        user-select: none; /*evita seleccionar el texto de la flecha*/
+        transition: transform .3s;
+        display: none; /* Solo se muestra la flecha que corresponde al vídeo actual */
+    }
+
+    /*crecer flecha al pasar raton*/
+    .arrow:hover {
+        transform: translateY(-50%) scale(1.15);
+    }
+
+    /*flechas*/
+    .prev { left: 1rem; }
+    .next { right: 1rem; }
+
+    /*puntos del carrusel*/
+    .dots {
+        display: flex;
+        gap: 14px;
+
+        /*estilo de puntos*/
+        label {
+            width: 18px;
+            height: 18px;
+            background-color: var(--color-claro);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background .3s, transform .3s;
+        }
+    }
+
+    /*ocultar botones reales*/
+    input {
+    display: none;
+    }
+}
+
+/* ventana que muestra un video */
+.viewport {
+    width: min(760px, 62vw);
+    overflow: hidden;
+}
+
+/* cinta con los 3 videos */
+.slider {
+    display: flex;
+    width: max-content;
+    transition: transform .5s ease;
+
+    /*tamaño ventana*/
+    .video {
+        width: min(760px, 62vw);
+        aspect-ratio: 760 / 430;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--color-dorado);
+
+        /*tamaño video*/
+        iframe {
+            width: 88%;
+            height: 82%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+        }
+    }
+}
+
+/*------------ Controlar el Slider ---------------*/
+
+/* Cada posición desplaza la cinta - cada video mide un 33,33%*/
+#s1:checked ~ .viewport .slider {transform: translateX(0);}
+#s2:checked ~ .viewport .slider {transform: translateX(-33.3333%);}
+#s3:checked ~ .viewport .slider {transform: translateX(-66.6666%);}
+
+/* Punto activo - se pone dorado y crece un poco*/
+#s1:checked ~ .dots label[for="s1"],
+#s2:checked ~ .dots label[for="s2"],
+#s3:checked ~ .dots label[for="s3"] {
+    background-color: var(--color-dorado);
+    transform: scale(1.1);
+}
+
+/* Primera posición: solo flecha derecha */
+#s1:checked ~ .n1 {display: block}
+/* Posición del medio: izquierda (p2) y derecha (n2) */
+#s2:checked ~ .p2,
+#s2:checked ~ .n2 {display: block}
+/* Última posición: solo flecha izquierda */
+#s3:checked ~ .p3 {display: block}
+
+/*----------------------------------------- ON TOUR -------------------------------------*/
+
+.tour {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-oscuro);
+}
+
+/* contenedor de sección */
+.tour-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 7rem 6%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 7rem;
+}
+
+/* lista de eventos */
+.tour-body {
+    width: 85%;
+    flex: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* posicionamiento de eventos dentro de la lista */
+.tour-list {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.7rem;
+}
+
+/* tarjetra de evento que contiene la fecha, info y botones*/
+.event {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.2rem 1rem;
+    background-color: var(--color-granate);
+    border: 1px solid var(--color-dorado);
+    border-radius: 10px;
+    position: relative;
+}
+
+/* logo en esquina de tarjeta */
+.event::after {
+    content: "";
+    position: absolute;
+    right: .8rem;
+    bottom: .6rem;
+    width: 34px;
+    height: 34px;
+
+    background-image: url(img/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* bloque de fecha */
+.event-date {
+    flex: 0 0 80px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    color: var(--color-claro);
+    font-family: var(--fuente-principal);
+    text-transform: uppercase;
+    line-height: 1;
+
+    /*mes*/
+    span {
+        font-size: 1.8rem;
+    }
+
+    /*numero*/
+    strong {
+        font-size: 2.6rem;
+    }
+}
+
+.event-info {
+    flex: 1;
+
+    h3 {
+        font-size: .85rem;
+        text-transform: none;
+        font-family: var(--fuente-principal);
+        font-weight: 700;
+        color: var(--color-claro);
+    }
+
+    /*descripción de evento*/
+    p {
+        font-size: .8rem;
+        margin: .2rem 0 .6rem;
+    }
+}
+
+/* botones */
+.event-buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+/*formato botones*/
+.btn-small {
+    padding: .35rem 1.4rem;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+/* cambio al pasar el ratón*/
+.btn-small:hover {
+    background-color: var(--color-claro);
+}
+
+/*----------------------------------------- STORE -------------------------------------*/
+
+.store {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-granate);
+}
+
+.store-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 5%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* los 2 grupos separados por la línea */
+.store-body {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* colocación de grupos */
+.store-group {
+    flex: 1;
+
+    display: flex;
+    flex-flow: row wrap; /*si no caben siguiente linea*/
+    gap: 2rem 1.5rem;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+
+/* linea separadora */
+.store-divider {
+    flex: 0 0 4px;
+    border-radius: 40px;
+    background-color: var(--color-dorado);
+}
+
+/* lo que ocupa cada producto */
+.product {
+    flex: 1 0 38%;
+    max-width: 48%;
+}
+
+.product-pic {
+    width: 100%;
+    aspect-ratio: 1 / 1; /*que la img sea siempre cuadrada*/
+    background-color: white;
+    border-radius: 6px 6px 0 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /*Escala la imagen completa sin recortar ni deformar*/
+    }
+}
+
+
+/* parte baja del producto */
+.product-footer {
+    padding: .5rem .8rem;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
+    border-radius: 0 0 6px 6px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+
+    span {
+        font-size: 1rem;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+}
+
+/*----------------------------------------- CONTACT -------------------------------------*/
+
+.contact {
+    width: 100%;
+    min-height: 80vh;
+    background-color: var(--color-oscuro);
+}
+
+.contact-container {
+    width: 100%;
+    min-height: 80vh;
+    padding: 4rem 8%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* formulario, datos y enlaces en tres columnas */
+.contact-body {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+form {
+    flex: 2;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ajuste de campos */
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: .7rem;
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+    border: 1px solid var(--color-dorado);
+    border-radius: 4px;
+    font-family: var(--fuente-principal);
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+/* cuadro del mensaje */
+textarea {
+    height: 160px;
+    resize: none;
+}
+
+/* cambiar el borde al seleccionar el input */
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-claro);
+}
+
+.submit {
+    width: 50%;
+    padding: .7rem;
+    background-color: var(--color-dorado);
+    color: var(--color-granate);
+    font-family: var(--fuente-principal);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: var(--color-claro);
+}
+
+/* datos de contacto */
+.contact-info {
+    flex: 2;
+    font-size: .95rem;
+    line-height: 1.6;
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    strong {
+        color: var(--color-dorado);
+    }
+
+    a {
+        color: var(--color-claro);
+        text-decoration: none;
+    }
+}
+
+/* redes */
+.social {
+    display: flex;
+    gap: .8rem;
+
+    a {
+        padding: 4px;
+        border-radius: 10px;
+        display: block;
+    }
+
+    a:hover {
+        background-color: var(--color-claro);
+    }
+
+    img {
+        width: 32px;
+        height: 32px;
+        display: block;
+    }
+}
+
+/* enlaces de navegación */
+.contact-nav {
+    flex: 1;
+    padding-left: 2rem;
+    border-left: 2px solid var(--color-dorado);
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+
+    /*estilos enlaces*/
+    a {
+        color: var(--color-dorado);
+        font-family: var(--fuente-principal);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    a:hover {
+        color: var(--color-claro);
+    }
+}
+
+/*----------------------------------------- FOOTER -------------------------------------*/
+
+footer {
+    width: 100%;
+    padding: 1.2rem 5%;
+    background-color: var(--color-granate);
+    border-top: 1px solid var(--color-tarjeta-oscura);
+
+    /*copyright*/
+    p {
+        flex: 1;
+        text-align: center;
+        font-size: .7rem;
+    }
+}
+
+/* logo, copyright y redes */
+.footer-container {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    flex: 0 0 60px;
+    height: 60px;
+
+    background-image: url(img/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+footer .social img {
+    width: 32px;
+    height: 32px;
+}
+
+/*----------------------- MediaQueries --------------*/
+
+@media screen and (max-width: 1100px) {
+    /* reduce la separación del menu y se hace mas pequeña la letra*/
+    #menu {
+        gap: .9rem;
+
+        li a {
+        font-size: .8rem;
+        }
+    }
+}
+
+/* ================= hasta 900px =================== */
+@media screen and (max-width: 900px) {
+
+    /* variable para altura de cabecera */
+    :root {
+        --header-h: 64px;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%; /*evitar que el movil cambie el tamañño de letra*/
+        text-size-adjust: 100%;
+    }
+
+    /* crecen segun su contenido */
+    .bio, .bio-container,
+    .albums, .albums-container,
+    .tour, .tour-container,
+    .store, .store-container,
+    .contact, .contact-container {
+        min-height: auto;
+    }
+
+    /*--Cabecera y menú desplegable--*/
+    header {
+        height: var(--header-h);
+        min-height: 0;
+    }
+
+    /* logo derecha menu izquierda */
+    nav {
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+
+    .logo {
+        padding: .75rem 0;
+    }
+
+    .img-logo {
+        max-width: 240px;
+    }
+
+    /* La lista del menu pasa a ser un panel
+       Cerrado por defecto / #menu:target lo abre */
+    #menu {
+        position: fixed; /*no se mueve al hacer scroll*/
+        top: var(--header-h); /*para que este justo debajo de la cabecera*/
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        flex: none;
+        height: auto;
+        flex-flow: column nowrap;
+        align-items: stretch; /*para que los enlaces ocupen todo el ancho*/
+        justify-content: flex-start;
+        gap: 0;
+
+        background-color: var(--color-granate);
+        border-top: 1px solid var(--color-dorado);
+
+        /*animación de abrir y cerra el menu burguer*/
+        visibility: hidden; 
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity .25s, transform .25s, visibility .25s;
+        
+    }
+
+    /* menu abierto */
+    #menu:target {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+
+    /* enlaces del panel */
+    #menu li a {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(243, 233, 220, .12);
+    }
+
+    /* Botón burguer */
+    .burger {
+        position: relative;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+    }
+
+    /* las tres líneas del menu burguer */
+    .burger-open {
+        display: block;
+        background:
+            linear-gradient(var(--color-dorado), var(--color-dorado)) center 28% / 26px 3px no-repeat,
+            linear-gradient(var(--color-dorado), var(--color-dorado)) center 50% / 26px 3px no-repeat,
+            linear-gradient(var(--color-dorado), var(--color-dorado)) center 72% / 26px 3px no-repeat;
+    }
+
+    /*cada pseudoelemento crea una línea que se curazan para formar la X*/
+    .burger-close::before,
+    .burger-close::after {
+        content: "";
+        position: absolute;
+        left: 9px;
+        right: 9px;
+        top: 50%;
+        height: 3px;
+        margin-top: -1.5px;
+        background-color: var(--color-dorado);
+        border-radius: 2px;
+    }
+
+    .burger-close::before {
+        transform: rotate(45deg);
+    }
+
+    .burger-close::after {
+        transform: rotate(-45deg);
+    }
+
+    /* esto se encargará de poner el fonde semitransparente 
+    cuando se despliega el menu burguer */
+    .menu-backdrop {
+        position: fixed;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: rgba(21, 23, 28, .7);
+    }
+
+    /* Aqui se define cuando aparece o desaparecen las cosas en el menu burguer
+    utilizando el sistema que se utiliza para las flechas del slider */
+    #menu:target ~ .burger-open {display: none;}
+    #menu:target ~ .burger-close {display: block;}
+    #menu:target ~ .menu-backdrop {display: block;}
+
+    /* ---- Hero ---- */
+    .line-1, .line-3 {
+        font-size: 3rem;
+    }
+
+    /*centrar el texto*/
+    .hero-container {
+        justify-content: center;
+    }
+
+    /* ---- Resto del contenido ---- */
+
+    /*una columna*/
+    .bio-container, 
+    .featured, .albums-list, 
+    .tour-body, 
+    .contact-body {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    /* dejan de ser cajas y se reordenan entre si */
+    .bio-left, .bio-right {
+        display: contents;
+    }
+
+    /*para ordenar en el orden que quiero*/
+    .bio-right h2 {order: 1;}
+    .bio-left img {order: 2;}
+    .bio-right p {order: 3;}
+    .bio-left-text {order: 4;}
+    .bio-timeline {order: 5;}
+
+    .bio-left img,
+    .bio-left-text,
+    .bio-right p,
+    .bio-timeline {
+        width: 100%;
+        max-width: 680px;
+    }
+
+    .bio-timeline {
+        min-height: 320px;
+    }
+
+    /* Álbum destacado*/
+    .featured-cover {
+        flex: none;
+        width: 70%;
+        max-width: 360px;
+    }
+
+    /* tarjeta */
+    .featured-card {
+        flex: none;
+        width: 100%;
+        max-width: 480px;
+
+        /*ocualtar imagen de tarjeta*/
+        img {
+            display: none;
+        }
+
+    }
+
+    /* no estirar ni dejar espacio sup */
+    .featured-info {
+        flex: none;
+        padding-top: 0;
+    }
+
+    .album, 
+    .tour-list, 
+    form, 
+    .contact-info, 
+    .contact-nav {
+        width: 100%;
+        flex: none;
+    }
+
+    /* quita el padding lateral de escritorio (8rem) para que el carrusel
+       no sea más ancho que la pantalla y deja un poco de espacio abajo para las flechas */
+    .carousel {
+        gap: 1.2rem;
+        padding: 0 0 .5rem;
+    }
+
+    /* tamaño de la ventana y de cada vídeo del slider
+       (.slider NO se toca: es la cinta con los 3 vídeos y su ancho es max-content) */
+    .viewport, 
+    .slider .video {
+        width: 80vw;
+    }
+
+    /* las flechas bajan a la fila de los puntos para no tapar el vídeo */
+    .carousel .arrow {
+        top: auto;
+        bottom: -7px; /* centradas con la fila de puntos */
+        width: 48px;
+        height: 48px;
+        font-size: 2.6rem;
+        line-height: 48px;
+        text-align: center;
+        transform: none;
+    }
+
+    /* sin animación de movimiento al pasar el ratón */
+    .carousel .arrow:hover {
+        transform: none;
+    }
+
+    .carousel .prev {
+        left: 0;
+    }
+
+    .carousel .next {
+        right: 0;
+    }
+
+    .store-body {
+        flex-flow: column nowrap;
+    }
+
+    /*la linea pasa a ser horizontal*/
+    .store-divider {
+        flex: 0 0 2px;
+        width: 100%;
+    }
+
+    /* la linea para arriba y en horizontal */
+    .contact-nav {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 2px solid var(--color-dorado);
+        padding-top: 1rem;
+    }
+
+    .submit {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-flow: column nowrap;
+    }
+}
+
+/* ===================== hasta 600px ===================== */
+@media screen and (max-width: 600px) {
+
+    h2 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* ---- Hero ---- */
+    .hero-container {
+        padding: 0 5%;
+    }
+
+    .hero-legend {
+        gap: 1.5rem;
+    }
+
+    .line-1, .line-3 {
+        font-size: 2.8rem;
+    }
+
+    .line-2 {
+        font-size: 1.5rem;
+    }
+
+    /* botones apilados, más fáciles de pulsar con el pulgar */
+    .hero-buttons {
+        flex-flow: column nowrap;
+        width: 100%;
+        max-width: 260px;
+        gap: .8rem;
+    }
+
+    .btn {
+        padding: .9rem 1.2rem;
+        text-align: center;
+    }
+
+    /* ---- Espacios de las secciones ---- */
+    .bio-container,
+    .albums-container,
+    .contact-container {
+        padding: 3rem 6%;
+    }
+
+    .tour-container,
+    .store-container {
+        padding: 3rem 5%;
+    }
+
+    .bio-container {
+        gap: 1.8rem;
+    }
+
+    .albums-container,
+    .tour-container,
+    .store-container,
+    .contact-container {
+        gap: 2rem;
+    }
+
+    /* ---- Biography ---- */
+    .bio-right h2 {
+        font-size: 2rem;
+    }
+
+    .bio-left-text {
+        gap: 1.2rem;
+    }
+
+    .bio-left-text p,
+    .bio-right p {
+        font-size: .95rem;
+        line-height: 1.75;
+    }
+
+    /* la línea temporal ocupa todo el ancho y mantiene la proporción de la imagen (828 x 769) */
+    .bio-timeline {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 828 / 769;
+    }
+
+    /* ---- Albums ---- */
+    .featured {
+        gap: 1.5rem;
+    }
+
+    .featured-info {
+        width: 100%;
+    }
+
+    .featured-info h3 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    /* lista de canciones centrada con el ancho justo de su contenido */
+    .featured-info ol {
+        width: fit-content;
+        margin: 0 auto;
+        padding-left: 1.8rem;
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+
+    .featured-card,
+    .album {
+        padding: 1rem;
+    }
+
+    .albums-list {
+        margin-top: 0;
+        gap: 1rem;
+    }
+
+    .album-main ol {
+        font-size: .9rem;
+    }
+
+    .btn-play {
+        padding: .7rem 2rem;
+    }
+
+    /* ---- Vídeos (carrusel) ----
+       el vídeo ocupa casi todo el ancho; las flechas ya bajan a la fila de los puntos
+       desde la mediaquery de 900px */
+    .videos-container {
+        padding: 2.5rem 6%;
+    }
+
+    /* ancho de la ventana y de cada vídeo (la cinta .slider NO se toca) */
+    .viewport,
+    .slider .video {
+        width: 88vw;
+    }
+
+    .slider .video iframe {
+        width: 92%;
+    }
+
+    /* ---- On Tour ---- */
+    .tour-body {
+        gap: .8rem;
+    }
+
+    /* tarjeta de evento más compacta */
+    .event {
+        padding: .8rem;
+        gap: .8rem;
+    }
+
+    .event::after {
+        width: 28px;
+        height: 28px;
+    }
+
+    .event-date {
+        flex: 0 0 56px;
+    }
+
+    .event-date span {
+        font-size: 1.1rem;
+    }
+
+    .event-date strong {
+        font-size: 2rem;
+    }
+
+    .event-info h3 {
+        font-size: .85rem;
+        line-height: 1.35;
+    }
+
+    .event-info p {
+        font-size: .78rem;
+    }
+
+    /* si no caben, los botones bajan a otra línea */
+    .event-buttons {
+        flex-wrap: wrap;
+    }
+
+    .btn-small {
+        padding: .55rem .9rem;
+        font-size: .75rem;
+        white-space: nowrap;
+    }
+
+    /* ---- Store ---- */
+    .store-body {
+        gap: 1.5rem;
+    }
+
+    .store-group {
+        gap: 1.2rem .8rem;
+    }
+
+    /* todas las tarjetas de una fila miden lo mismo aunque el nombre ocupe 1 o 2 líneas */
+    .product {
+        flex: 1 0 44%;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .product-footer {
+        flex: 1;
+    }
+
+    .product-footer span {
+        font-size: .75rem;
+        line-height: 1.3;
+    }
+
+    .product-footer img {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+    }
+
+    /* ---- Contact ---- */
+    .contact-body {
+        gap: 2rem;
+    }
+
+    /* 16px mínimo: si es menor, iOS hace zoom automático al enfocar el campo */
+    input[type=text],
+    input[type=email],
+    textarea {
+        padding: .85rem;
+        font-size: 1rem;
+    }
+
+    textarea {
+        height: 140px;
+    }
+
+    .contact-info {
+        font-size: .9rem;
+    }
+
+    /* los correos o enlaces largos se parten en vez de salirse de la pantalla */
+    .contact-info a {
+        overflow-wrap: anywhere;
+    }
+
+    /* los enlaces pasan a una fila que salta de línea si no caben */
+    .contact-nav {
+        flex-flow: row wrap;
+        gap: .4rem 1.5rem;
+    }
+
+    .contact-nav a {
+        display: inline-block;
+        padding: .4rem 0;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+        padding: 1.5rem 6%;
+    }
+
+    footer p {
+        font-size: .75rem;
+        line-height: 1.6;
+    }
+}
